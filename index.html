@@ -1,246 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Mohd Afroj | Full-Stack Developer</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-      @theme {
-        --color-clifford: #da373d;
-      }
-    </style>
-  </head>
-  <!--https://mohdafroj.github.io/portfolio/---->
-  <body class="bg-gray-100 text-gray-900 font-sans">
-    <div class="max-w-5xl mx-auto p-6 bg-white shadow-lg rounded-xl mt-10">
-      <header class="text-center">
-        <h1 class="text-3xl font-bold text-blue-800 hover:underline">
-          <a href="http://mohdafroj.github.io/portfolio/" target="_self"
-            >Mohd Afroj</a
-          >
-        </h1>
-        <p class="text-sm">
-          FA-40, Hashmi Apartment, Shaheen Bagh, Delhi 110025
-        </p>
-        <p class="text-sm">+91-7838799646 | mohd.afroj.soft@gmail.com</p>
-      </header>
 
-      <section class="mt-6">
-        <h2 class="text-xl font-semibold border-b pb-1 mb-2">
-          Work Experience
-        </h2>
-        <div class="space-y-4">
-          <div>
-            <div
-              class="flex px-1 mb-1 font-bold h-7 items-center justify-between bg-yellow-50 border-full shadow-lg"
-            >
-              <h3>“Aurionpro Solutions Ltd.” - Full Stack Developer</h3>
-              <h5 class="text-geen-500">Feb 2025 to Present</h5>
-            </div>
-            <ul class="list-disc ml-5 text-sm">
-              <li>
-                Working as a Full-Stack Developer with the
-                <strong> Sampoorn Digital Sansad</strong> client in New Delhi.
-              </li>
-              <li>
-                Developing high-performance modules for the web application
-                using reusable and efficient code in
-                <strong
-                  >Laravel 11, MySQL, Vue 3 Composition API, Pinia Store,
-                  Tailwindcss, Vee Validate, Yup</strong
-                >.
-              </li>
-              <li>Mentoring team members when needed.</li>
-              <li>
-                Collaborating with the Business Analyst (BA) to review the
-                Functional Requirement Specification (FRS) and implement
-                necessary changes.
-              </li>
-              <li>
-                Created a <strong>common layout package</strong> with vue 3 for
-                all services, including encrypted payload handling, login,
-                logout, authentication, and cookiee management.
-              </li>
-              <li>
-                Created a <strong>common ui component package</strong> with vue
-                3 for all services, including Button, Textbox Input Popup ...
-                etc components.
-              </li>
-            </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Mohd Afroj — Senior Full Stack Developer specializing in Python, FastAPI, React, PHP, APIs, databases and cloud technologies.">
+  <title>Mohd Afroj | Senior Full Stack Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #60a5fa, #2dd4bf);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent
+    }
+
+    .grid-bg {
+      background-image: radial-gradient(rgba(148, 163, 184, .17) 1px, transparent 1px);
+      background-size: 22px 22px
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100">
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+      <a href="#home" class="text-lg font-extrabold tracking-tight">Mohd<span class="text-cyan-400">Afroj</span><span
+          class="ml-2 text-xs font-medium text-slate-400">/ Portfolio</span></a>
+      <div class="hidden items-center gap-6 text-sm text-slate-300 md:flex">
+        <a class="hover:text-cyan-300" href="#about">About</a><a class="hover:text-cyan-300" href="#skills">Skills</a><a
+          class="hover:text-cyan-300" href="#projects">Projects</a><a class="hover:text-cyan-300"
+          href="#experience">Experience</a><a class="hover:text-cyan-300" href="#contact">Contact</a>
+      </div>
+      <a href="#contact"
+        class="rounded-lg bg-cyan-400 px-4 py-2 text-sm font-bold text-slate-950 hover:bg-cyan-300">Let's talk</a>
+    </nav>
+  </header>
+  <main>
+    <section id="home" class="grid-bg">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-[1.35fr_.65fr] md:py-28">
+        <div>
+          <p
+            class="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-200">
+            <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Senior Full Stack Developer · 12+ years</p>
+          <h1 class="max-w-3xl text-4xl font-black leading-tight tracking-tight md:text-6xl">Building secure, scalable
+            <span class="gradient-text">digital products.</span></h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">I’m Mohd Afroj, a software engineer working across
+            backend services, web applications, API integrations, and data-driven systems. My toolkit includes Python,
+            FastAPI, React, PHP, Node.js, SQL databases, and cloud technologies.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#projects"
+              class="rounded-xl bg-cyan-400 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-300">Explore my work ↓</a>
+            <a href="#contact"
+              class="rounded-xl border border-white/15 px-5 py-3 font-semibold hover:bg-white/5">Contact me</a>
+            <!-- Add a resume PDF URL here when you want to publish it. -->
           </div>
-          <div>
-            <div
-              class="flex px-1 mb-1 h-7 items-center justify-between bg-green-50 border-full shadow-lg"
-            >
-              <h3 class="font-bold">
-                "Corporate Infotech Pvt. Ltd." - Sr Full Stack Developer
-              </h3>
-              <h5 class="text-geen-500">Apr 2024 - Aug 2024</h5>
-            </div>
-            <ul class="list-disc ml-5 text-sm">
-              <li>
-                Worked on the revamp of the <strong>UPSC</strong> portal,
-                enhancing the overall performance and user experience.
-              </li>
-              <li>
-                Developed high-performance modules in the web application by
-                writing
-                <strong>reusable, maintainable, and efficient code.</strong>
-              </li>
-              <li>
-                Led a small development team, providing technical guidance and
-                ensuring timely delivery of assigned tasks.
-              </li>
-              <li>
-                Collaborated with the <strong>client</strong> to understand
-                business objectives and application requirements.
-              </li>
-              <li>
-                Developed high-performance modules for the web application using
-                reusable and efficient code in
-                <strong
-                  >ExpressJs, MySQL, MongoDB, ReactJS, Tailwindcss, Formik,
-                  Yup</strong
-                >.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <div
-              class="flex px-1 mb-1 h-7 items-center justify-between bg-green-50 border-full shadow-lg"
-            >
-              <h3 class="font-bold">
-                "AAPC INDIA Pvt. Ltd." - Sr Software Engineer
-              </h3>
-              <h5 class="text-geen-600">Dec 2019 - Nov 2023</h5>
-            </div>
-            <ul class="list-disc ml-5 text-sm">
-              <li>
-                Gets business critical tickets on priority after sprint start as
-                business requirements.
-              </li>
-
-              <li>
-                Developing a high-performance module on web application by
-                writing reusable & efficient code.
-              </li>
-
-              <li>Create a document for regular updates if needed.</li>
-
-              <li>
-                Collaborating with html developers on the integration of
-                elements.
-              </li>
-
-              <li>
-                Collaborating with stakeholder and SEO team. Reporting to team
-                lead.
-              </li>
-
-              <li>
-                Finds issues on application to improve performance of
-                application & create a ticket on Jira Tool.
-              </li>
-            </ul>
-          </div>
-          <!-- Add other experiences similarly -->
-        </div>
-      </section>
-      <section class="mt-6">
-        <h2 class="text-xl font-semibold border-b pb-1 mb-2">
-          Technical Skills
-        </h2>
-        <div class="grid grid-cols-2 gap-4 text-sm">
-          <div>
-            <h3 class="font-bold">Primary Skills</h3>
-            <ul class="list-disc ml-5">
-              <li>JavaScript (ES6+), TypeScript</li>
-              <li>React.js, Angular, Node.js</li>
-              <li>MongoDB, MySQL, Redis</li>
-              <li>Docker, Kubernetes, GCP, Azure</li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="font-bold">Secondary Skills</h3>
-            <ul class="list-disc ml-5">
-              <li>PHP, Python, Django</li>
-              <li>HTML, CSS, jQuery, Laravel</li>
-              <li>PostgreSQL, Git, Jenkins</li>
-            </ul>
+          <div class="mt-8 flex flex-wrap gap-2 text-xs text-slate-300">
+            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-2">Python · FastAPI</span><span
+              class="rounded-full border border-white/10 bg-white/5 px-3 py-2">React · Vue</span><span
+              class="rounded-full border border-white/10 bg-white/5 px-3 py-2">PHP · Laravel</span><span
+              class="rounded-full border border-white/10 bg-white/5 px-3 py-2">MySQL · PostgreSQL</span>
           </div>
         </div>
-      </section>
+        <div class="mx-auto w-full max-w-sm">
+          <div
+            class="rounded-3xl border border-white/10 bg-gradient-to-br from-blue-500/20 via-slate-900 to-teal-400/10 p-7 shadow-2xl shadow-cyan-950/40">
+            <div
+              class="mx-auto flex h-28 w-28 items-center justify-center rounded-3xl bg-gradient-to-br from-blue-500 to-teal-300 text-4xl font-black text-slate-950 shadow-lg">
+              MA</div>
+            <h2 class="mt-6 text-center text-2xl font-bold">Mohd Afroj</h2>
+            <p class="mt-1 text-center text-sm text-slate-400">Senior Full Stack Developer</p>
+            <div class="mt-6 grid grid-cols-2 gap-3">
+              <div class="rounded-xl border border-white/10 bg-black/20 p-3">
+                <p class="text-xl font-bold text-cyan-300">12+</p>
+                <p class="text-xs text-slate-400">Years in software</p>
+              </div>
+              <div class="rounded-xl border border-white/10 bg-black/20 p-3">
+                <p class="text-xl font-bold text-cyan-300">API</p>
+                <p class="text-xs text-slate-400">Backend engineering</p>
+              </div>
+              <div class="rounded-xl border border-white/10 bg-black/20 p-3">
+                <p class="text-xl font-bold text-cyan-300">Full stack</p>
+                <p class="text-xs text-slate-400">Frontend + backend</p>
+              </div>
+              <div class="rounded-xl border border-white/10 bg-black/20 p-3">
+                <p class="text-xl font-bold text-cyan-300">Cloud</p>
+                <p class="text-xs text-slate-400">Deployment & CI/CD</p>
+              </div>
+            </div>
+            <p class="mt-5 text-center text-xs leading-5 text-slate-500">Initials card placeholder — replace with a
+              professional photo if desired.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section class="mt-6">
-        <h2 class="text-xl font-semibold border-b pb-1 mb-2">Projects</h2>
-        <ul class="list-disc ml-5 text-sm space-y-2">
-          <li>
-            <strong>AAPC.com</strong> – Medical coding platform (ReactJS, PHP,
-            Azure)
-          </li>
-          <li>
-            <strong>PerfumeBooth.com</strong> – E-commerce for perfumes
-            (Angular, Node.js)
-          </li>
-          <li>
-            <strong>Tavus.io</strong> – AI-based video cloning platform (NodeJS,
-            PostgreSQL)
-          </li>
-          <li>
-            <strong>MyHeal Coligomed</strong> – Healthcare platform (NodeJS,
-            Kafka, Elasticsearch)
-          </li>
-          <!-- Add more as needed -->
-        </ul>
-      </section>
-
-      <section class="mt-6">
-        <h2 class="text-xl font-semibold border-b pb-1 mb-2">Education</h2>
-        <ul class="list-disc ml-5 text-sm">
-          <li>MCA (2010), RKGIT Ghaziabad – GBTU</li>
-          <li>B.Sc. in Math (2007), Bareilly College – MJPRU</li>
-          <li>12th & 10th (2004 & 2002), U.P. Board</li>
-        </ul>
-      </section>
-
-      <section class="mt-6">
-        <h2 class="text-xl font-semibold border-b pb-1 mb-2">
-          GitHub Repositories
+    <section id="about" class="border-y border-white/10 bg-slate-900/60">
+      <div class="mx-auto max-w-6xl px-5 py-16">
+        <p class="text-xs font-bold uppercase tracking-[.25em] text-cyan-300">About me</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Engineering from UI to database and deployment
         </h2>
-        <ul class="list-disc ml-5 text-sm text-blue-700">
-          <li>
-            <a
-              href="https://github.com/mohdafroj/admin_frontend"
-              target="_blank"
-              >admin_frontend</a
-            >
-          </li>
-          <li>
-            <a href="https://github.com/mohdafroj/admin_backend" target="_blank"
-              >admin_backend</a
-            >
-          </li>
-          <li>
-            <a href="https://github.com/mohdafroj/perfumersclub" target="_blank"
-              >perfumersclub</a
-            >
-          </li>
-          <li>
-            <a href="https://github.com/mohdafroj/perfumebooth" target="_blank"
-              >perfumebooth</a
-            >
-          </li>
-        </ul>
-      </section>
+        <div class="mt-7 grid gap-8 md:grid-cols-2">
+          <p class="leading-8 text-slate-300">With 12+ years in software development, I have worked on enterprise web
+            applications across frontend, backend, databases, API integration, testing, and deployment. I focus on
+            clean, reusable code, secure application workflows, maintainability, and performance.</p>
+          <p class="leading-8 text-slate-300">My experience spans React, Vue 3, Angular, Python/FastAPI, PHP frameworks,
+            Node.js/NestJS, MySQL, PostgreSQL, MongoDB, and Redis. I have also worked with authentication and
+            authorization, asynchronous integrations, Docker, cloud platforms, and CI/CD-oriented workflows.</p>
+        </div>
+      </div>
+    </section>
 
-      <footer class="mt-10 text-center text-xs text-gray-500">
-        <p>
-          FA-40, Hashmi Apartment, Near Jagganpatti chauraha, Shaheen Bagh,
-          Allama Sibli Noamani Raod, New Delhi, 110025
-        </p>
-        <p>Last Updated: 12 Nov, 2024</p>
-      </footer>
-    </div>
-  </body>
+    <section id="skills" class="mx-auto max-w-6xl px-5 py-16">
+      <p class="text-xs font-bold uppercase tracking-[.25em] text-cyan-300">Technical toolkit</p>
+      <h2 class="mt-3 text-3xl font-bold md:text-4xl">Skills & technologies</h2>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="rounded-2xl border border-white/10 bg-white/[.03] p-5">
+          <div class="text-2xl">⌘</div>
+          <h3 class="mt-3 font-bold">Backend & APIs</h3>
+          <p class="mt-2 text-sm leading-7 text-slate-400">Python, FastAPI, PHP, Laravel, CodeIgniter, Node.js, NestJS,
+            Express.js, REST APIs, microservices</p>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-white/[.03] p-5">
+          <div class="text-2xl">◈</div>
+          <h3 class="mt-3 font-bold">Frontend</h3>
+          <p class="mt-2 text-sm leading-7 text-slate-400">React.js, Vue 3 Composition API, Angular, JavaScript,
+            TypeScript, Tailwind CSS, Pinia, Vue Query</p>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-white/[.03] p-5">
+          <div class="text-2xl">▤</div>
+          <h3 class="mt-3 font-bold">Databases & caching</h3>
+          <p class="mt-2 text-sm leading-7 text-slate-400">MySQL, PostgreSQL, MongoDB, Redis, SQL, schema design,
+            transactions, indexing, query optimization</p>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-white/[.03] p-5">
+          <div class="text-2xl">⛨</div>
+          <h3 class="mt-3 font-bold">Security & integration</h3>
+          <p class="mt-2 text-sm leading-7 text-slate-400">OAuth 2.0, JWT, RBAC, AES-GCM, webhooks, gRPC/Protobuf,
+            event-driven integration, queues</p>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-white/[.03] p-5">
+          <div class="text-2xl">☁</div>
+          <h3 class="mt-3 font-bold">Cloud & DevOps</h3>
+          <p class="mt-2 text-sm leading-7 text-slate-400">AWS, GCP, Azure, Docker, Docker Compose, Jenkins, Git,
+            GitLab, GitHub, CI/CD</p>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-white/[.03] p-5">
+          <div class="text-2xl">✳</div>
+          <h3 class="mt-3 font-bold">Quality & AI-assisted development</h3>
+          <p class="mt-2 text-sm leading-7 text-slate-400">Unit, integration and E2E testing, code review, Agile/Scrum,
+            Claude Code, GitHub Copilot, Cursor</p>
+        </article>
+      </div>
+      <p class="mt-4 text-xs leading-6 text-slate-500">Skills are based on the attached resume. Keep only items you can
+        confidently discuss and distinguish production experience from familiarity or ongoing learning.</p>
+    </section>
+
+    <section id="projects" class="border-y border-white/10 bg-slate-900/60">
+      <div class="mx-auto max-w-6xl px-5 py-16">
+        <p class="text-xs font-bold uppercase tracking-[.25em] text-cyan-300">Selected work</p>
+        <h2 class="mt-3 text-3xl font-bold md:text-4xl">Project highlights</h2>
+        <p class="mt-4 max-w-2xl text-slate-400">Summaries below are adapted from your resume. Do not publish
+          confidential client details, source code, screenshots, or data without authorization.</p>
+        <div class="mt-8 grid gap-5 lg:grid-cols-2">
+          <article
+            class="group rounded-2xl border border-white/10 bg-slate-950 p-6 transition hover:border-cyan-300/40">
+            <div class="flex items-start justify-between gap-3"><span
+                class="rounded-lg bg-cyan-300/10 px-3 py-1 text-xs font-bold text-cyan-200">Enterprise /
+                Government</span><span class="text-slate-600">01</span></div>
+            <h3 class="mt-5 text-xl font-bold">Sampoorn Digital Sansad</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">Full-stack development for digital services supporting
+              member onboarding, attendance, claims, committee management, and related workflows. Resume-described work
+              includes REST APIs, reusable UI components, security utilities, and service integration.</p>
+            <div class="mt-4 flex flex-wrap gap-2"><span class="tag">Python</span><span class="tag">FastAPI</span><span
+                class="tag">React / Vue</span><span class="tag">PostgreSQL</span><span class="tag">AES-GCM</span></div>
+          </article>
+          <article
+            class="group rounded-2xl border border-white/10 bg-slate-950 p-6 transition hover:border-cyan-300/40">
+            <div class="flex items-start justify-between gap-3"><span
+                class="rounded-lg bg-blue-300/10 px-3 py-1 text-xs font-bold text-blue-200">Full-stack
+                application</span><span class="text-slate-600">02</span></div>
+            <h3 class="mt-5 text-xl font-bold">React + FastAPI web modules</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">Developed reusable frontend views and backend services,
+              integrated REST endpoints, implemented data filters and forms, and worked with relational data for
+              business-critical application features.</p>
+            <div class="mt-4 flex flex-wrap gap-2"><span class="tag">React</span><span class="tag">FastAPI</span><span
+                class="tag">MySQL</span><span class="tag">REST</span></div>
+          </article>
+          <article
+            class="group rounded-2xl border border-white/10 bg-slate-950 p-6 transition hover:border-cyan-300/40">
+            <div class="flex items-start justify-between gap-3"><span
+                class="rounded-lg bg-violet-300/10 px-3 py-1 text-xs font-bold text-violet-200">Security &
+                access</span><span class="text-slate-600">03</span></div>
+            <h3 class="mt-5 text-xl font-bold">Authentication & role-based access</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">Implemented access-controlled member areas and application
+              workflows, with roles and permissions determining access. Relevant security experience also includes JWT,
+              OAuth 2.0, and reusable encryption utilities as described in the resume.</p>
+            <div class="mt-4 flex flex-wrap gap-2"><span class="tag">JWT</span><span class="tag">RBAC</span><span
+                class="tag">OAuth 2.0</span><span class="tag">PHP</span></div>
+          </article>
+          <article
+            class="group rounded-2xl border border-white/10 bg-slate-950 p-6 transition hover:border-cyan-300/40">
+            <div class="flex items-start justify-between gap-3"><span
+                class="rounded-lg bg-emerald-300/10 px-3 py-1 text-xs font-bold text-emerald-200">Integration &
+                data</span><span class="text-slate-600">04</span></div>
+            <h3 class="mt-5 text-xl font-bold">API integration & asynchronous processing</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">Experience described in API integrations, webhooks,
+              Kafka-related asynchronous processing, ETL/data migration, validation, retry handling, and idempotency.
+              Add a public demo or sanitized architecture diagram if available.</p>
+            <div class="mt-4 flex flex-wrap gap-2"><span class="tag">Kafka</span><span class="tag">ETL</span><span
+                class="tag">Webhooks</span><span class="tag">Queues</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="mx-auto max-w-6xl px-5 py-16">
+      <p class="text-xs font-bold uppercase tracking-[.25em] text-cyan-300">Career journey</p>
+      <h2 class="mt-3 text-3xl font-bold md:text-4xl">Professional experience</h2>
+      <div class="mt-8 space-y-4">
+        <article class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
+          <div class="flex flex-wrap justify-between gap-3">
+            <div>
+              <h3 class="text-lg font-bold">Full Stack Developer</h3>
+              <p class="text-slate-400">Aurionpro Solutions Ltd. · New Delhi</p>
+            </div><span class="text-sm text-cyan-200">Feb 2025 – Present</span>
+          </div>
+          <p class="mt-3 text-sm leading-7 text-slate-300">Sampoorn Digital Sansad project; full-stack features, REST
+            APIs, React/Vue components, FastAPI/NestJS/Laravel services, encryption utilities, database work, and
+            deployment-oriented tooling, as described in the resume.</p>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
+          <div class="flex flex-wrap justify-between gap-3">
+            <div>
+              <h3 class="text-lg font-bold">Senior Full Stack Developer</h3>
+              <p class="text-slate-400">CIPL · New Delhi</p>
+            </div><span class="text-sm text-cyan-200">Apr 2024 – Aug 2024</span>
+          </div>
+          <p class="mt-3 text-sm leading-7 text-slate-300">Add a concise description of your specific responsibilities,
+            project, and outcomes for this role before publishing.</p>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
+          <div class="flex flex-wrap justify-between gap-3">
+            <div>
+              <h3 class="text-lg font-bold">Senior Software Engineer</h3>
+              <p class="text-slate-400">AAPC India Pvt. Ltd. · Noida</p>
+            </div><span class="text-sm text-cyan-200">Dec 2019 – Nov 2023</span>
+          </div>
+          <p class="mt-3 text-sm leading-7 text-slate-300">Worked on React and backend services, application views and
+            filters, REST/SOAP integrations, and complex MySQL queries in an Agile environment. Resume lists Python,
+            PHP, React, FastAPI/Express.js, gRPC, and Elasticsearch in the technical environment.</p>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
+          <div class="flex flex-wrap justify-between gap-3">
+            <div>
+              <h3 class="text-lg font-bold">Senior Software Engineer</h3>
+              <p class="text-slate-400">Perfume Booth Pvt. Ltd. · New Delhi</p>
+            </div><span class="text-sm text-cyan-200">May 2017 – Nov 2019</span>
+          </div>
+          <p class="mt-3 text-sm leading-7 text-slate-300">Maintained PHP/MySQL applications, developed Angular-based UI
+            and REST integrations, configured caching for performance, and implemented role-based member areas.</p>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
+          <div class="flex flex-wrap justify-between gap-3">
+            <div>
+              <h3 class="text-lg font-bold">PHP Engineer</h3>
+              <p class="text-slate-400">B. Jain Publishers Pvt. Ltd. · Noida</p>
+            </div><span class="text-sm text-cyan-200">Jan 2013 – Apr 2017</span>
+          </div>
+          <p class="mt-3 text-sm leading-7 text-slate-300">Developed and maintained PHP/MySQL applications using
+            CodeIgniter, MVC patterns, forms, access-controlled member areas, and web technologies including JavaScript,
+            jQuery, HTML, and CSS.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="border-y border-white/10 bg-slate-900/60">
+      <div class="mx-auto grid max-w-6xl gap-8 px-5 py-14 md:grid-cols-2">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.25em] text-cyan-300">Education</p>
+          <h2 class="mt-3 text-2xl font-bold">Academic background</h2>
+          <p class="mt-4 font-semibold">Master in Computer Application (MCA)</p>
+          <p class="mt-1 text-sm text-slate-400">GBT University, Lucknow, India · Jul 2010 (as listed in resume)</p>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.25em] text-cyan-300">Certifications</p>
+          <h2 class="mt-3 text-2xl font-bold">Continuous learning</h2>
+          <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
+            <li>TCS iON Career Edge – AI Foundation</li>
+            <li>Python Essentials 1</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="mx-auto max-w-6xl px-5 py-16">
+      <p class="text-xs font-bold uppercase tracking-[.25em] text-cyan-300">Get in touch</p>
+      <h2 class="mt-3 text-3xl font-bold md:text-4xl">Let’s connect</h2>
+      <p class="mt-4 max-w-2xl leading-7 text-slate-400">Interested in backend engineering, full-stack development, API
+        platforms, and enterprise application development. Replace the placeholder links below with your real
+        professional contact details before publishing.</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="mailto:YOUR_EMAIL@example.com"
+          class="rounded-xl bg-cyan-400 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-300">Email me</a>
+        <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noreferrer"
+          class="rounded-xl border border-white/15 px-5 py-3 font-semibold hover:bg-white/5">GitHub</a>
+        <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer"
+          class="rounded-xl border border-white/15 px-5 py-3 font-semibold hover:bg-white/5">LinkedIn</a>
+      </div>
+      <p class="mt-10 border-t border-white/10 pt-6 text-xs text-slate-500">© <span id="year"></span> Mohd Afroj · Built
+        with HTML and Tailwind CSS.</p>
+    </section>
+  </main>
+  <style>
+    .tag {
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 9999px;
+      padding: .35rem .65rem;
+      font-size: .72rem;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, .04)
+    }
+  </style>
+  <script>document.getElementById("year").textContent = new Date().getFullYear()</script>
+</body>
+
 </html>
