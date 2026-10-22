@@ -10,7 +10,9 @@
   <title>Mohd Afroj — Full-stack Software Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
@@ -352,7 +354,7 @@
       padding: 23px 28px;
     }
 
-    .stat + .stat {
+    .stat+.stat {
       border-left: 1px solid var(--line);
     }
 
@@ -369,6 +371,120 @@
       margin-top: 6px;
       color: var(--muted);
       font-size: 11px;
+    }
+
+    .tech-stack {
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+      padding-block: 22px 25px;
+    }
+
+    .tech-stack-heading {
+      margin-bottom: 4px;
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+
+    .tech-stack-subtitle {
+      margin-bottom: 13px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .tech-stack-grid {
+      display: grid;
+      grid-template-columns: repeat(11, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    .tech-item {
+      display: flex;
+      min-height: 75px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      border: 1px solid #e8ece8;
+      border-radius: 10px;
+      background: #fff;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .tech-item:hover {
+      transform: translateY(-3px);
+      border-color: #d4dfc7;
+      box-shadow: 0 8px 18px rgb(25 34 31 / 6%);
+    }
+
+    .tech-icon {
+      display: grid;
+      height: 30px;
+      place-items: center;
+      font-family: var(--serif);
+      font-size: 21px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .tech-name {
+      color: #344039;
+      font-size: 10px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .tech-python {
+      color: #3776ab;
+    }
+
+    .tech-fastapi {
+      color: #13a88b;
+    }
+
+    .tech-react {
+      color: #0ea5e9;
+    }
+
+    .tech-php {
+      height: 22px;
+      align-self: center;
+      border-radius: 50%;
+      background: #667bb0;
+      color: #fff;
+      padding: 0 5px;
+      font-size: 12px;
+      font-style: italic;
+    }
+
+    .tech-laravel {
+      color: #f24b45;
+    }
+
+    .tech-mysql {
+      color: #0879a8;
+    }
+
+    .tech-postgres {
+      color: #336791;
+    }
+
+    .tech-aws {
+      color: #253448;
+      font-size: 17px;
+    }
+
+    .tech-docker {
+      color: #168bd0;
+    }
+
+    .tech-git {
+      color: #eb4a36;
+    }
+
+    .tech-linux {
+      color: #253448;
     }
 
     .section {
@@ -415,7 +531,7 @@
       line-height: 1.9;
     }
 
-    .about-copy p + p {
+    .about-copy p+p {
       margin-top: 17px;
     }
 
@@ -738,6 +854,10 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .tech-stack-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
       .stat:nth-child(3) {
         border-top: 1px solid var(--line);
         border-left: 0;
@@ -780,7 +900,7 @@
       }
 
       .nav-links,
-      .nav > .button {
+      .nav>.button {
         display: none;
       }
 
@@ -869,6 +989,10 @@
         font-size: 10px;
       }
 
+      .tech-stack-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
       .section {
         padding-block: 69px;
       }
@@ -927,6 +1051,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       *,
       *::before,
       *::after {
@@ -979,7 +1104,7 @@
             <span aria-hidden="true">↗</span></a>
         </div>
         <div class="hero-note">
-          <strong>Python</strong><span>·</span><strong>FastAPI</strong><span>·</span><strong>React</strong><span>·</span><strong>PHP</strong>
+          <strong>Python</strong><span>·</span><strong>FastAPI</strong><span>·</span><strong>Node.js</strong><span>·</span><strong>React</strong><span>·</span><strong>PHP</strong>
           <span class="note-divider" aria-hidden="true"></span><span>Delhi, India</span>
         </div>
       </div>
@@ -996,9 +1121,40 @@
     <section class="stats" aria-label="At a glance">
       <div class="stats-inner wrap">
         <div class="stat"><strong>12+</strong><span>Years building software</span></div>
-        <div class="stat"><strong>Full stack</strong><span>Frontend to backend</span></div>
+        <div class="stat"><strong>Full stack</strong><span>Frontend, backend and DevOps</span></div>
         <div class="stat"><strong>API first</strong><span>Integrations & services</span></div>
         <div class="stat"><strong>Since 2013</strong><span>In professional software</span></div>
+      </div>
+    </section>
+
+    <section class="tech-stack" aria-labelledby="tech-stack-title">
+      <div class="wrap">
+        <h2 class="tech-stack-heading" id="tech-stack-title">Tech Stack</h2>
+        <p class="tech-stack-subtitle">Technologies I work with</p>
+        <div class="tech-stack-grid">
+          <div class="tech-item"><span class="tech-icon tech-python" aria-hidden="true">Py</span><span
+              class="tech-name">Python</span></div>
+          <div class="tech-item"><span class="tech-icon tech-fastapi" aria-hidden="true">ϟ</span><span
+              class="tech-name">FastAPI</span></div>
+          <div class="tech-item"><span class="tech-icon tech-react" aria-hidden="true">⚛</span><span
+              class="tech-name">React</span></div>
+          <div class="tech-item"><span class="tech-icon tech-php" aria-hidden="true">php</span><span
+              class="tech-name">PHP</span></div>
+          <div class="tech-item"><span class="tech-icon tech-laravel" aria-hidden="true">L</span><span
+              class="tech-name">Laravel</span></div>
+          <div class="tech-item"><span class="tech-icon tech-mysql" aria-hidden="true">SQL</span><span
+              class="tech-name">MySQL</span></div>
+          <div class="tech-item"><span class="tech-icon tech-postgres" aria-hidden="true">PG</span><span
+              class="tech-name">PostgreSQL</span></div>
+          <div class="tech-item"><span class="tech-icon tech-aws" aria-hidden="true">aws</span><span
+              class="tech-name">AWS</span></div>
+          <div class="tech-item"><span class="tech-icon tech-docker" aria-hidden="true">▤</span><span
+              class="tech-name">Docker</span></div>
+          <div class="tech-item"><span class="tech-icon tech-git" aria-hidden="true">◆</span><span
+              class="tech-name">Git</span></div>
+          <div class="tech-item"><span class="tech-icon tech-linux" aria-hidden="true">🐧</span><span
+              class="tech-name">Linux</span></div>
+        </div>
       </div>
     </section>
 
@@ -1069,12 +1225,13 @@
           high level to respect client and project confidentiality.</p>
         <div class="project-grid">
           <article class="project">
-            <div class="project-number"><span class="project-label">Enterprise · Public sector</span><span>01</span></div>
+            <div class="project-number"><span class="project-label">Enterprise · Public sector</span><span>01</span>
+            </div>
             <h3>Digital Sansad</h3>
             <p>Full-stack work on digital services for member onboarding, attendance, claims, and committee
               workflows, including API development, reusable UI, security utilities, and service integration.</p>
-            <div class="tag-list"><span class="tag">Python</span><span class="tag">FastAPI</span><span
-                class="tag">React / Vue</span><span class="tag">PostgreSQL</span></div>
+            <div class="tag-list"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React
+                / Vue</span><span class="tag">PostgreSQL</span></div>
           </article>
           <article class="project">
             <div class="project-number"><span class="project-label">Product engineering</span><span>02</span></div>
@@ -1114,23 +1271,38 @@
         </div>
         <div class="experience-list">
           <article class="experience-item">
-            <div><h3>Full Stack Developer</h3><p>Aurionpro Solutions Ltd. · New Delhi</p></div>
+            <div>
+              <h3>Full Stack Developer</h3>
+              <p>Aurionpro Solutions Ltd. · New Delhi</p>
+            </div>
             <time class="experience-date" datetime="2025-02">Feb 2025 — Present</time>
           </article>
           <article class="experience-item">
-            <div><h3>Senior Full Stack Developer</h3><p>CIPL · New Delhi</p></div>
+            <div>
+              <h3>Senior Full Stack Developer</h3>
+              <p>CIPL · New Delhi</p>
+            </div>
             <time class="experience-date" datetime="2024-04">Apr 2024 — Aug 2024</time>
           </article>
           <article class="experience-item">
-            <div><h3>Senior Software Engineer</h3><p>AAPC India Pvt. Ltd. · Noida</p></div>
+            <div>
+              <h3>Senior Software Engineer</h3>
+              <p>AAPC India Pvt. Ltd. · Noida</p>
+            </div>
             <time class="experience-date" datetime="2019-12">Dec 2019 — Nov 2023</time>
           </article>
           <article class="experience-item">
-            <div><h3>Senior Software Engineer</h3><p>Perfume Booth Pvt. Ltd. · New Delhi</p></div>
+            <div>
+              <h3>Senior Software Engineer</h3>
+              <p>Perfume Booth Pvt. Ltd. · New Delhi</p>
+            </div>
             <time class="experience-date" datetime="2017-05">May 2017 — Nov 2019</time>
           </article>
           <article class="experience-item">
-            <div><h3>PHP Engineer</h3><p>B. Jain Publishers Pvt. Ltd. · Noida</p></div>
+            <div>
+              <h3>PHP Engineer</h3>
+              <p>B. Jain Publishers Pvt. Ltd. · Noida</p>
+            </div>
             <time class="experience-date" datetime="2013-01">Jan 2013 — Apr 2017</time>
           </article>
         </div>
@@ -1147,7 +1319,10 @@
         <div class="education-block">
           <p class="section-kicker">Certifications</p>
           <h3>Always learning</h3>
-          <ul><li>TCS iON Career Edge — AI Foundation</li><li>Python Essentials 1</li></ul>
+          <ul>
+            <li>TCS iON Career Edge — AI Foundation</li>
+            <li>Python Essentials 1</li>
+          </ul>
         </div>
       </div>
     </section>
