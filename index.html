@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en">
+﻿<!doctype html>
+<html lang="en" class="scroll-smooth [scroll-padding-top:88px] [color-scheme:light]">
 
 <head>
   <meta charset="utf-8">
@@ -13,1086 +13,40 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
-  <style>
-    :root {
-      color-scheme: light;
-      --paper: #f7f7f2;
-      --ink: #19221f;
-      --muted: #646d66;
-      --line: #dfe3da;
-      --green: #c5f56a;
-      --green-dark: #314a1b;
-      --white: #fff;
-      --serif: "Manrope", "Segoe UI", sans-serif;
-      --sans: "DM Sans", "Segoe UI", sans-serif;
-      --width: 1120px;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 88px;
-    }
-
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    a:focus-visible,
-    summary:focus-visible {
-      outline: 3px solid #547b2a;
-      outline-offset: 4px;
-    }
-
-    .skip-link {
-      position: absolute;
-      z-index: 10;
-      top: 12px;
-      left: 12px;
-      transform: translateY(-160%);
-      border-radius: 8px;
-      background: var(--ink);
-      color: var(--white);
-      padding: 12px 16px;
-    }
-
-    .skip-link:focus {
-      transform: translateY(0);
-    }
-
-    .wrap {
-      width: min(var(--width), calc(100% - 48px));
-      margin-inline: auto;
-    }
-
-    .site-header {
-      position: sticky;
-      z-index: 5;
-      top: 0;
-      border-bottom: 1px solid rgb(25 34 31 / 8%);
-      background: rgb(247 247 242 / 88%);
-      backdrop-filter: blur(16px);
-    }
-
-    .nav {
-      display: flex;
-      min-height: 76px;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
-      text-decoration: none;
-    }
-
-    .brand-mark {
-      display: grid;
-      width: 37px;
-      height: 37px;
-      place-items: center;
-      border-radius: 12px;
-      background: var(--ink);
-      color: var(--green);
-      font-family: var(--serif);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: -.06em;
-    }
-
-    .brand-name {
-      font-family: var(--serif);
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: -.035em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: clamp(18px, 3vw, 36px);
-    }
-
-    .nav-links a,
-    .mobile-menu a {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: color .2s ease;
-    }
-
-    .nav-links a:hover,
-    .mobile-menu a:hover {
-      color: var(--ink);
-    }
-
-    .button {
-      display: inline-flex;
-      min-height: 46px;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      border: 1px solid var(--ink);
-      border-radius: 999px;
-      background: var(--ink);
-      color: var(--white);
-      padding: 0 20px;
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform .2s ease, background .2s ease, color .2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      background: #2b3832;
-    }
-
-    .button-light {
-      border-color: var(--line);
-      background: transparent;
-      color: var(--ink);
-    }
-
-    .button-light:hover {
-      background: var(--white);
-    }
-
-    .mobile-menu {
-      display: none;
-    }
-
-    .hero {
-      position: relative;
-      display: grid;
-      min-height: 635px;
-      grid-template-columns: 1.08fr .92fr;
-      align-items: center;
-      gap: clamp(40px, 8vw, 100px);
-      padding-block: 76px 88px;
-    }
-
-    .hero::before {
-      position: absolute;
-      z-index: -1;
-      top: 58px;
-      right: 0;
-      width: min(390px, 100%);
-      height: 390px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgb(197 245 106 / 27%), rgb(197 245 106 / 0%) 70%);
-      content: "";
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #89b840;
-      box-shadow: 0 0 0 4px rgb(137 184 64 / 15%);
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
-    }
-
-    .hero h1 {
-      max-width: 680px;
-      margin: 27px 0 21px;
-      font-family: var(--serif);
-      font-size: clamp(46px, 6.4vw, 78px);
-      font-weight: 600;
-      letter-spacing: -.075em;
-      line-height: 1.04;
-    }
-
-    .hero h1 span {
-      color: #698a37;
-    }
-
-    .hero-copy {
-      max-width: 515px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.85;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 11px;
-      margin-top: 29px;
-    }
-
-    .hero-note {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      margin-top: 34px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .hero-note strong {
-      color: var(--ink);
-      font-weight: 700;
-    }
-
-    .note-divider {
-      width: 1px;
-      height: 16px;
-      background: var(--line);
-    }
-
-    .portrait-wrap {
-      position: relative;
-      width: min(100%, 395px);
-      justify-self: end;
-    }
-
-    .portrait-wrap::before {
-      position: absolute;
-      top: 20px;
-      right: -19px;
-      bottom: -20px;
-      left: 19px;
-      border: 1px solid #d3ddc4;
-      border-radius: 180px 180px 28px 28px;
-      content: "";
-    }
-
-    .portrait {
-      position: relative;
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 180px 180px 24px 24px;
-      background: #d9e1df;
-      object-fit: cover;
-    }
-
-    .portrait-caption {
-      position: absolute;
-      right: -24px;
-      bottom: 26px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border: 1px solid rgb(25 34 31 / 8%);
-      border-radius: 13px;
-      background: var(--white);
-      box-shadow: 0 12px 32px rgb(25 34 31 / 9%);
-      padding: 13px 16px;
-    }
-
-    .caption-icon {
-      display: grid;
-      width: 33px;
-      height: 33px;
-      place-items: center;
-      border-radius: 10px;
-      background: #edf4df;
-      color: #527728;
-      font-size: 16px;
-    }
-
-    .caption-title {
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .caption-copy {
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 10px;
-    }
-
-    .stats {
-      border-block: 1px solid var(--line);
-      background: rgb(255 255 255 / 48%);
-    }
-
-    .stats-inner {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .stat {
-      min-height: 106px;
-      padding: 23px 28px;
-    }
-
-    .stat+.stat {
-      border-left: 1px solid var(--line);
-    }
-
-    .stat strong {
-      display: block;
-      font-family: var(--serif);
-      font-size: 25px;
-      font-weight: 700;
-      letter-spacing: -.05em;
-    }
-
-    .stat span {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .tech-stack {
-      border-bottom: 1px solid var(--line);
-      background: var(--white);
-      padding-block: 22px 25px;
-    }
-
-    .tech-stack-heading {
-      margin-bottom: 4px;
-      font-family: var(--serif);
-      font-size: 18px;
-      font-weight: 800;
-      letter-spacing: -.04em;
-    }
-
-    .tech-stack-subtitle {
-      margin-bottom: 13px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .tech-stack-grid {
-      display: grid;
-      grid-template-columns: repeat(14, minmax(0, 1fr));
-      gap: 9px;
-    }
-
-    .tech-item {
-      display: flex;
-      min-height: 75px;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      border: 1px solid #e8ece8;
-      border-radius: 10px;
-      background: #fff;
-      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
-    }
-
-    .tech-item:hover {
-      transform: translateY(-3px);
-      border-color: #d4dfc7;
-      box-shadow: 0 8px 18px rgb(25 34 31 / 6%);
-    }
-
-    .tech-icon {
-      display: grid;
-      height: 30px;
-      place-items: center;
-      font-family: var(--serif);
-      font-size: 21px;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .tech-name {
-      color: #344039;
-      font-size: 10px;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    .tech-python {
-      color: #3776ab;
-    }
-
-    .tech-fastapi {
-      color: #13a88b;
-    }
-
-    .tech-react {
-      color: #0ea5e9;
-    }
-
-    .tech-php {
-      height: 22px;
-      align-self: center;
-      border-radius: 50%;
-      background: #667bb0;
-      color: #fff;
-      padding: 0 5px;
-      font-size: 12px;
-      font-style: italic;
-    }
-
-    .tech-laravel {
-      color: #f24b45;
-    }
-
-    .tech-mysql {
-      color: #0879a8;
-    }
-
-    .tech-postgres {
-      color: #336791;
-    }
-
-    .tech-aws {
-      color: #253448;
-      font-size: 17px;
-    }
-
-    .tech-docker {
-      color: #168bd0;
-    }
-
-    .tech-git {
-      color: #eb4a36;
-    }
-
-    .tech-linux {
-      color: #253448;
-    }
-
-    .tech-node {
-      color: #488b45;
-      font-size: 14px;
-    }
-
-    .tech-angular {
-      color: #dd0031;
-    }
-
-    .tech-vue {
-      color: #42b883;
-    }
-
-    .section {
-      padding-block: 104px;
-    }
-
-    .section-kicker {
-      margin-bottom: 15px;
-      color: #698a37;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .section-heading {
-      max-width: 660px;
-      margin-bottom: 0;
-      font-family: var(--serif);
-      font-size: clamp(34px, 4.5vw, 53px);
-      font-weight: 600;
-      letter-spacing: -.065em;
-      line-height: 1.12;
-    }
-
-    .section-intro {
-      max-width: 530px;
-      margin: 17px 0 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .about-layout {
-      display: grid;
-      grid-template-columns: .95fr 1.05fr;
-      gap: 90px;
-      align-items: start;
-    }
-
-    .about-copy {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .about-copy p+p {
-      margin-top: 17px;
-    }
-
-    .capabilities {
-      padding-top: 92px;
-    }
-
-    .capability-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 13px;
-      margin-top: 38px;
-    }
-
-    .capability {
-      min-height: 190px;
-      border: 1px solid var(--line);
-      border-radius: 17px;
-      background: rgb(255 255 255 / 58%);
-      padding: 23px;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .capability:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 32px rgb(25 34 31 / 6%);
-    }
-
-    .capability-icon {
-      display: grid;
-      width: 37px;
-      height: 37px;
-      place-items: center;
-      border-radius: 11px;
-      background: #edf4df;
-      color: #507329;
-      font-size: 15px;
-      font-weight: 700;
-    }
-
-    .capability h3 {
-      margin: 19px 0 8px;
-      font-family: var(--serif);
-      font-size: 15px;
-      letter-spacing: -.025em;
-    }
-
-    .capability p {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.75;
-    }
-
-    .work-section {
-      background: #202a25;
-      color: var(--white);
-    }
-
-    .work-section .section-kicker {
-      color: var(--green);
-    }
-
-    .work-section .section-intro {
-      color: #b7c0b8;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 39px;
-    }
-
-    .project {
-      position: relative;
-      overflow: hidden;
-      min-height: 265px;
-      border: 1px solid rgb(255 255 255 / 12%);
-      border-radius: 17px;
-      background: rgb(255 255 255 / 4%);
-      padding: 28px;
-      transition: border-color .2s ease, transform .2s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-4px);
-      border-color: rgb(197 245 106 / 48%);
-    }
-
-    .project-number {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: #c3cdbe;
-      font-size: 11px;
-    }
-
-    .project-label {
-      border: 1px solid rgb(197 245 106 / 27%);
-      border-radius: 999px;
-      color: var(--green);
-      padding: 6px 10px;
-      font-size: 10px;
-    }
-
-    .project h3 {
-      margin: 37px 0 11px;
-      font-family: var(--serif);
-      font-size: 23px;
-      font-weight: 600;
-      letter-spacing: -.045em;
-    }
-
-    .project p {
-      max-width: 490px;
-      margin-bottom: 18px;
-      color: #c0c8c1;
-      font-size: 12px;
-      line-height: 1.85;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-    }
-
-    .tag {
-      border: 1px solid rgb(255 255 255 / 13%);
-      border-radius: 999px;
-      color: #d4dbd4;
-      padding: 6px 9px;
-      font-size: 10px;
-    }
-
-    .experience-layout {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 88px;
-      align-items: start;
-    }
-
-    .experience-list {
-      border-top: 1px solid var(--line);
-    }
-
-    .experience-item {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 8px 20px;
-      border-bottom: 1px solid var(--line);
-      padding: 23px 0;
-    }
-
-    .experience-item h3 {
-      margin-bottom: 5px;
-      font-family: var(--serif);
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: -.025em;
-    }
-
-    .experience-item p {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    .experience-date {
-      color: #617d3a;
-      font-size: 11px;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .education {
-      border-top: 1px solid var(--line);
-      background: #eef0e8;
-    }
-
-    .education-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 68px;
-    }
-
-    .education-block {
-      padding-top: 25px;
-      border-top: 1px solid #cbd1c4;
-    }
-
-    .education-block h3 {
-      margin-bottom: 8px;
-      font-family: var(--serif);
-      font-size: 16px;
-    }
-
-    .education-block p,
-    .education-block li {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .education-block ul {
-      margin: 10px 0 0;
-      padding-left: 18px;
-    }
-
-    .contact {
-      position: relative;
-      overflow: hidden;
-      border-radius: 22px;
-      background: var(--green);
-      padding: clamp(36px, 7vw, 72px);
-    }
-
-    .contact::after {
-      position: absolute;
-      top: -130px;
-      right: -60px;
-      width: 330px;
-      height: 330px;
-      border: 1px solid rgb(25 34 31 / 10%);
-      border-radius: 50%;
-      box-shadow: 0 0 0 35px rgb(25 34 31 / 3%), 0 0 0 75px rgb(25 34 31 / 3%);
-      content: "";
-      pointer-events: none;
-    }
-
-    .contact .section-kicker {
-      color: #435d27;
-    }
-
-    .contact .section-heading {
-      max-width: 620px;
-      font-size: clamp(36px, 5.2vw, 61px);
-    }
-
-    .contact .section-intro {
-      max-width: 460px;
-      color: #43503b;
-    }
-
-    .contact-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 25px;
-    }
-
-    .contact .button {
-      position: relative;
-      z-index: 1;
-      border-color: var(--ink);
-      background: var(--ink);
-    }
-
-    .contact .button-light {
-      border-color: rgb(25 34 31 / 30%);
-      background: transparent;
-      color: var(--ink);
-    }
-
-    .contact .button-light:hover {
-      background: rgb(255 255 255 / 38%);
-    }
-
-    .footer {
-      display: flex;
-      min-height: 94px;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .footer p {
-      margin-bottom: 0;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-    }
-
-    .footer-links a {
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: var(--ink);
-    }
-
-    @media (min-width: 1400px) {
-      .hero {
-        min-height: 690px;
-      }
-    }
-
-    @media (max-width: 800px) {
-      .hero {
-        min-height: auto;
-        gap: 50px;
-        padding-block: 67px 76px;
-      }
-
-      .hero h1 {
-        font-size: clamp(43px, 8vw, 64px);
-      }
-
-      .portrait-wrap {
-        width: min(100%, 320px);
-      }
-
-      .stats-inner {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .tech-stack-grid {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-      }
-
-      .stat:nth-child(3) {
-        border-top: 1px solid var(--line);
-        border-left: 0;
-      }
-
-      .stat:nth-child(4) {
-        border-top: 1px solid var(--line);
-      }
-
-      .section {
-        padding-block: 78px;
-      }
-
-      .about-layout,
-      .experience-layout {
-        grid-template-columns: 1fr;
-        gap: 33px;
-      }
-
-      .about-layout {
-        gap: 26px;
-      }
-
-      .capabilities {
-        padding-top: 72px;
-      }
-
-      .experience-layout {
-        gap: 31px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .wrap {
-        width: min(var(--width), calc(100% - 36px));
-      }
-
-      .nav {
-        min-height: 67px;
-      }
-
-      .nav-links,
-      .nav>.button {
-        display: none;
-      }
-
-      .mobile-menu {
-        position: relative;
-        display: block;
-      }
-
-      .mobile-menu summary {
-        display: grid;
-        width: 40px;
-        height: 40px;
-        place-items: center;
-        border: 1px solid var(--line);
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 18px;
-        list-style: none;
-      }
-
-      .mobile-menu summary::-webkit-details-marker {
-        display: none;
-      }
-
-      .mobile-menu[open] summary {
-        background: var(--ink);
-        color: var(--white);
-      }
-
-      .mobile-links {
-        position: absolute;
-        top: 51px;
-        right: 0;
-        display: grid;
-        min-width: 190px;
-        gap: 18px;
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        background: var(--paper);
-        box-shadow: 0 14px 35px rgb(25 34 31 / 10%);
-        padding: 18px;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 50px;
-        padding-block: 59px 70px;
-      }
-
-      .hero h1 {
-        max-width: 560px;
-        margin-top: 24px;
-        font-size: clamp(45px, 12vw, 64px);
-      }
-
-      .hero-copy {
-        font-size: 14px;
-      }
-
-      .hero-note {
-        flex-wrap: wrap;
-        row-gap: 9px;
-        font-size: 11px;
-      }
-
-      .portrait-wrap {
-        width: min(86%, 350px);
-        justify-self: center;
-        margin-right: 8px;
-      }
-
-      .portrait-caption {
-        right: -14px;
-      }
-
-      .stat {
-        min-height: 90px;
-        padding: 18px 16px;
-      }
-
-      .stat strong {
-        font-size: 22px;
-      }
-
-      .stat span {
-        font-size: 10px;
-      }
-
-      .tech-stack-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .section {
-        padding-block: 69px;
-      }
-
-      .section-heading {
-        font-size: clamp(34px, 9vw, 46px);
-      }
-
-      .capability-grid,
-      .project-grid,
-      .education-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .capabilities {
-        padding-top: 63px;
-      }
-
-      .capability {
-        min-height: auto;
-      }
-
-      .project {
-        min-height: auto;
-        padding: 23px;
-      }
-
-      .project h3 {
-        margin-top: 30px;
-      }
-
-      .experience-item {
-        grid-template-columns: 1fr;
-        gap: 7px;
-      }
-
-      .experience-date {
-        grid-row: 1;
-      }
-
-      .education-grid {
-        gap: 34px;
-      }
-
-      .contact {
-        border-radius: 17px;
-      }
-
-      .footer {
-        min-height: 110px;
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: center;
-        gap: 12px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/tailwind.css">
 </head>
 
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <nav class="nav wrap" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="Mohd Afroj, home">
-        <span class="brand-mark" aria-hidden="true">MA</span>
-        <span class="brand-name">Mohd Afroj</span>
+<body class="m-0 bg-paper text-ink font-sans antialiased">
+  <a class="skip-link focus-visible:outline-[3px_solid_#547b2a] focus-visible:outline-offset-4 [position:absolute] [z-index:10] [top:12px] [left:12px] [transform:translateY(-160%)] [border-radius:8px] [background:var(--color-ink)] [color:#fff] [padding:12px_16px] focus:[transform:translateY(0)]"
+    href="#main">Skip to content</a>
+  <header
+    class="site-header [position:sticky] [z-index:5] [top:0] [border-bottom:1px_solid_rgb(25_34_31_/_8%)] [background:rgb(247_247_242_/_88%)] [backdrop-filter:blur(16px)]">
+    <nav
+      class="nav wrap [display:flex] [min-height:76px] [align-items:center] [justify-content:space-between] [gap:24px] max-[600px]:[min-height:67px] max-[600px]:[&>.button]:[display:none] [width:min(1120px,_calc(100%_-_48px))] [margin-inline:auto] max-[600px]:[width:min(1120px,_calc(100%_-_36px))]"
+      aria-label="Main navigation">
+      <a class="brand focus-visible:outline-[3px_solid_#547b2a] focus-visible:outline-offset-4 [display:inline-flex] [align-items:center] [gap:11px] [text-decoration:none]"
+        href="#home" aria-label="Mohd Afroj, home">
+        <span
+          class="brand-mark [display:grid] [width:37px] [height:37px] [place-items:center] [border-radius:12px] [background:var(--color-ink)] [color:var(--color-green)] [font-family:var(--font-display)] [font-size:13px] [font-weight:800] [letter-spacing:-.06em]"
+          aria-hidden="true">MA</span>
+        <span
+          class="brand-name [font-family:var(--font-display)] [font-size:14px] [font-weight:800] [letter-spacing:-.035em]">Mohd
+          Afroj</span>
       </a>
-      <div class="nav-links">
+      <div
+        class="nav-links [display:flex] [align-items:center] [gap:clamp(18px,_3vw,_36px)] [&_a]:[color:var(--color-muted)] [&_a]:[font-size:13px] [&_a]:[font-weight:600] [&_a]:[text-decoration:none] [&_a]:[transition:color_.2s_ease] [&_a:hover]:[color:var(--color-ink)] max-[600px]:[display:none]">
         <a href="#about">About</a>
         <a href="#expertise">Expertise</a>
         <a href="#work">Work</a>
         <a href="#experience">Experience</a>
       </div>
-      <a class="button" href="#contact">Let’s connect <span aria-hidden="true">↗</span></a>
-      <details class="mobile-menu">
+      <a class="button focus-visible:outline-[3px_solid_#547b2a] focus-visible:outline-offset-4 [display:inline-flex] [min-height:46px] [align-items:center] [justify-content:center] [gap:10px] [border:1px_solid_var(--color-ink)] [border-radius:999px] [background:var(--color-ink)] [color:#fff] [padding:0_20px] [font-family:var(--font-sans)] [font-size:13px] [font-weight:700] [text-decoration:none] [transition:transform_.2s_ease,_background_.2s_ease,_color_.2s_ease] hover:[transform:translateY(-2px)] hover:[background:#2b3832]"
+        href="#contact">Let’s connect <span aria-hidden="true">↗</span></a>
+      <details
+        class="mobile-menu [&_a]:[color:var(--color-muted)] [&_a]:[font-size:13px] [&_a]:[font-weight:600] [&_a]:[text-decoration:none] [&_a]:[transition:color_.2s_ease] [&_a:hover]:[color:var(--color-ink)] [display:none] max-[600px]:[position:relative] max-[600px]:[display:block] max-[600px]:[&_summary]:[display:grid] max-[600px]:[&_summary]:[width:40px] max-[600px]:[&_summary]:[height:40px] max-[600px]:[&_summary]:[place-items:center] max-[600px]:[&_summary]:[border:1px_solid_var(--color-line)] max-[600px]:[&_summary]:[border-radius:50%] max-[600px]:[&_summary]:[cursor:pointer] max-[600px]:[&_summary]:[font-size:18px] max-[600px]:[&_summary]:[list-style:none] max-[600px]:[&_summary::-webkit-details-marker]:[display:none] max-[600px]:[&[open]_summary]:[background:var(--color-ink)] max-[600px]:[&[open]_summary]:[color:#fff]">
         <summary aria-label="Open navigation menu"><span aria-hidden="true">☰</span></summary>
-        <div class="mobile-links">
+        <div
+          class="mobile-links max-[600px]:[position:absolute] max-[600px]:[top:51px] max-[600px]:[right:0] max-[600px]:[display:grid] max-[600px]:[min-width:190px] max-[600px]:[gap:18px] max-[600px]:[border:1px_solid_var(--color-line)] max-[600px]:[border-radius:14px] max-[600px]:[background:var(--color-paper)] max-[600px]:[box-shadow:0_14px_35px_rgb(25_34_31_/_10%)] max-[600px]:[padding:18px]">
           <a href="#about">About</a>
           <a href="#expertise">Expertise</a>
           <a href="#work">Work</a>
@@ -1104,86 +58,205 @@
   </header>
 
   <main id="main">
-    <section class="hero wrap" id="home" aria-labelledby="hero-title">
+    <section
+      class="hero wrap [position:relative] [display:grid] [min-height:635px] [grid-template-columns:1.08fr_.92fr] [align-items:center] [gap:clamp(40px,_8vw,_100px)] [padding-block:76px_88px] [&::before]:[position:absolute] [&::before]:[z-index:-1] [&::before]:[top:58px] [&::before]:[right:0] [&::before]:[width:min(390px,_100%)] [&::before]:[height:390px] [&::before]:[border-radius:50%] [&::before]:[background:radial-gradient(circle,_rgb(197_245_106_/_27%),_rgb(197_245_106_/_0%)_70%)] [&::before]:[content:''] [&_h1]:[max-width:680px] [&_h1]:[margin:27px_0_21px] [&_h1]:[font-family:var(--font-display)] [&_h1]:[font-size:clamp(46px,_6.4vw,_78px)] [&_h1]:[font-weight:600] [&_h1]:[letter-spacing:-.075em] [&_h1]:[line-height:1.04] [&_h1_span]:[color:#698a37] min-[1400px]:[min-height:690px] max-[800px]:[min-height:auto] max-[800px]:[gap:50px] max-[800px]:[padding-block:67px_76px] max-[800px]:[&_h1]:[font-size:clamp(43px,_8vw,_64px)] max-[600px]:[grid-template-columns:1fr] max-[600px]:[gap:50px] max-[600px]:[padding-block:59px_70px] max-[600px]:[&_h1]:[max-width:560px] max-[600px]:[&_h1]:[margin-top:24px] max-[600px]:[&_h1]:[font-size:clamp(45px,_12vw,_64px)] [width:min(1120px,_calc(100%_-_48px))] [margin-inline:auto] max-[600px]:[width:min(1120px,_calc(100%_-_36px))]"
+      id="home" aria-labelledby="hero-title">
       <div class="hero-content">
-        <div class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Software engineer · 12+ years</div>
+        <div
+          class="eyebrow [display:inline-flex] [align-items:center] [gap:9px] [color:var(--color-muted)] [font-size:11px] [font-weight:700] [letter-spacing:.15em] [text-transform:uppercase]">
+          <span
+            class="eyebrow-dot [width:8px] [height:8px] [border-radius:50%] [background:#89b840] [box-shadow:0_0_0_4px_rgb(137_184_64_/_15%)]"
+            aria-hidden="true"></span> Software engineer · 12+ years
+        </div>
         <h1 id="hero-title">Thoughtful software.<br>Built to <span>scale.</span></h1>
-        <p class="hero-copy">I’m Mohd Afroj, a full-stack developer turning complex ideas into reliable web
+        <p
+          class="hero-copy [max-width:515px] [color:var(--color-muted)] [font-size:16px] [line-height:1.85] max-[600px]:[font-size:14px]">
+          I’m Mohd Afroj, a full-stack developer turning complex ideas into reliable web
           applications. From a well-designed API to a polished interface, I build products that work beautifully
           end to end.</p>
-        <div class="hero-actions">
-          <a class="button" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
-          <a class="button button-light" href="assets/Resume.pdf" target="_blank" rel="noopener">View résumé
+        <div class="hero-actions [display:flex] [flex-wrap:wrap] [gap:11px] [margin-top:29px]">
+          <a class="button focus-visible:outline-[3px_solid_#547b2a] focus-visible:outline-offset-4 [display:inline-flex] [min-height:46px] [align-items:center] [justify-content:center] [gap:10px] [border:1px_solid_var(--color-ink)] [border-radius:999px] [background:var(--color-ink)] [color:#fff] [padding:0_20px] [font-family:var(--font-sans)] [font-size:13px] [font-weight:700] [text-decoration:none] [transition:transform_.2s_ease,_background_.2s_ease,_color_.2s_ease] hover:[transform:translateY(-2px)] hover:[background:#2b3832]"
+            href="#work">Explore my work <span aria-hidden="true">↓</span></a>
+          <a class="button button-light focus-visible:outline-[3px_solid_#547b2a] focus-visible:outline-offset-4 [display:inline-flex] [min-height:46px] [align-items:center] [justify-content:center] [gap:10px] [border:1px_solid_var(--color-ink)] [border-radius:999px] [background:var(--color-ink)] [color:#fff] [padding:0_20px] [font-family:var(--font-sans)] [font-size:13px] [font-weight:700] [text-decoration:none] [transition:transform_.2s_ease,_background_.2s_ease,_color_.2s_ease] hover:[transform:translateY(-2px)] hover:[background:#2b3832] border-line! bg-transparent! text-ink! hover:bg-white!"
+            href="assets/Resume.pdf" target="_blank" rel="noopener">View Resume
             <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="hero-note">
+        <div
+          class="hero-note [display:flex] [align-items:center] [gap:11px] [margin-top:34px] [color:var(--color-muted)] [font-size:12px] [&_strong]:[color:var(--color-ink)] [&_strong]:[font-weight:700] max-[600px]:[flex-wrap:wrap] max-[600px]:[row-gap:9px] max-[600px]:[font-size:11px]">
           <strong>Python</strong><span>·</span><strong>FastAPI</strong><span>·</span><strong>Node.js</strong><span>·</span><strong>React</strong><span>·</span><strong>PHP</strong>
-          <span class="note-divider" aria-hidden="true"></span><span>Delhi, India</span>
+          <span class="note-divider [width:1px] [height:16px] [background:var(--color-line)]"
+            aria-hidden="true"></span><span>Delhi, India</span>
         </div>
       </div>
-      <div class="portrait-wrap">
-        <img class="portrait" src="assets/AI_Pic.png" alt="Portrait of Mohd Afroj" width="928" height="1120">
-        <div class="portrait-caption">
-          <span class="caption-icon" aria-hidden="true">✳</span>
-          <span><span class="caption-title">Full-stack developer</span><span class="caption-copy">From the API to the
+      <div
+        class="portrait-wrap group [position:relative] [width:min(100%,_320px)] [aspect-ratio:.83] [margin-bottom:52px] [justify-self:end] [&::before]:[position:absolute] [&::before]:[top:20px] [&::before]:[right:-19px] [&::before]:[bottom:-20px] [&::before]:[left:19px] [&::before]:[border:1px_solid_#d3ddc4] [&::before]:[border-radius:180px_180px_28px_28px] [&::before]:[content:''] max-[800px]:[width:min(100%,_270px)] max-[600px]:[width:min(78%,_260px)] max-[600px]:[justify-self:center] max-[600px]:[margin-right:8px]">
+        <img
+          class="portrait [position:absolute] [inset:0] [display:block] [width:100%] [height:100%] [border-radius:180px_180px_24px_24px] [background:#d9e1df] [box-shadow:0_24px_45px_-18px_rgb(25_34_31_/_48%),_16px_18px_30px_-22px_rgb(25_34_31_/_38%)] [object-fit:cover] [transform:perspective(900px)_rotateY(0)_rotateX(0)] [transition:transform_.4s_ease-out] group-hover:[transform:perspective(900px)_rotateY(-4deg)_rotateX(2deg)_translateY(-4px)_scale(1.05)] group-hover:[animation:portrait-travel_1.2s_ease-in-out] motion-reduce:group-hover:[animation:none]"
+          src="assets/AI_Pic.png" alt="Portrait of Mohd Afroj" width="928" height="1120">
+        <div
+          class="portrait-caption [position:absolute] [z-index:1] [right:-18px] [bottom:-52px] [display:flex] [width:max-content] [align-items:center] [gap:10px] [border:1px_solid_rgb(25_34_31_/_8%)] [border-radius:13px] [background:#fff] [box-shadow:0_12px_32px_rgb(25_34_31_/_9%)] [padding:13px_16px] max-[600px]:[right:-10px]">
+          <span
+            class="caption-icon [display:grid] [width:33px] [height:33px] [place-items:center] [border-radius:10px] [background:#edf4df] [color:#527728] [font-size:16px]"
+            aria-hidden="true">✳</span>
+          <span><span class="caption-title [display:block] [font-size:12px] [font-weight:700]">Full-stack
+              developer</span><span
+              class="caption-copy [display:block] [margin-top:4px] [color:var(--color-muted)] [font-size:10px]">From the
+              API to the
               interface</span></span>
         </div>
       </div>
     </section>
 
-    <section class="stats" aria-label="At a glance">
-      <div class="stats-inner wrap">
-        <div class="stat"><strong>12+</strong><span>Years building software</span></div>
-        <div class="stat"><strong>Full stack</strong><span>Frontend, backend and DevOps</span></div>
-        <div class="stat"><strong>API first</strong><span>Integrations & services</span></div>
-        <div class="stat"><strong>Since 2013</strong><span>In professional software</span></div>
-      </div>
-    </section>
-
-    <section class="tech-stack" aria-labelledby="tech-stack-title">
-      <div class="wrap">
-        <h2 class="tech-stack-heading" id="tech-stack-title">Tech Stack</h2>
-        <p class="tech-stack-subtitle">Technologies I work with</p>
-        <div class="tech-stack-grid">
-          <div class="tech-item"><span class="tech-icon tech-python" aria-hidden="true">Py</span><span
-              class="tech-name">Python</span></div>
-          <div class="tech-item"><span class="tech-icon tech-fastapi" aria-hidden="true">ϟ</span><span
-              class="tech-name">FastAPI</span></div>
-          <div class="tech-item"><span class="tech-icon tech-node" aria-hidden="true">JS</span><span
-              class="tech-name">Node.js</span></div>
-          <div class="tech-item"><span class="tech-icon tech-react" aria-hidden="true">⚛</span><span
-              class="tech-name">React</span></div>
-          <div class="tech-item"><span class="tech-icon tech-angular" aria-hidden="true">A</span><span
-              class="tech-name">Angular</span></div>
-          <div class="tech-item"><span class="tech-icon tech-vue" aria-hidden="true">V</span><span
-              class="tech-name">Vue.js</span></div>
-          <div class="tech-item"><span class="tech-icon tech-php" aria-hidden="true">php</span><span
-              class="tech-name">PHP</span></div>
-          <div class="tech-item"><span class="tech-icon tech-laravel" aria-hidden="true">L</span><span
-              class="tech-name">Laravel</span></div>
-          <div class="tech-item"><span class="tech-icon tech-mysql" aria-hidden="true">SQL</span><span
-              class="tech-name">MySQL</span></div>
-          <div class="tech-item"><span class="tech-icon tech-postgres" aria-hidden="true">PG</span><span
-              class="tech-name">PostgreSQL</span></div>
-          <div class="tech-item"><span class="tech-icon tech-aws" aria-hidden="true">aws</span><span
-              class="tech-name">AWS</span></div>
-          <div class="tech-item"><span class="tech-icon tech-docker" aria-hidden="true">▤</span><span
-              class="tech-name">Docker</span></div>
-          <div class="tech-item"><span class="tech-icon tech-git" aria-hidden="true">◆</span><span
-              class="tech-name">Git</span></div>
-          <div class="tech-item"><span class="tech-icon tech-linux" aria-hidden="true">🐧</span><span
-              class="tech-name">Linux</span></div>
+    <section class="stats [border-block:1px_solid_var(--color-line)] [background:rgb(255_255_255_/_48%)]"
+      aria-label="At a glance">
+      <div
+        class="stats-inner wrap [display:grid] [grid-template-columns:repeat(4,_1fr)] max-[800px]:[grid-template-columns:repeat(2,_1fr)] [width:min(1120px,_calc(100%_-_48px))] [margin-inline:auto] max-[600px]:[width:min(1120px,_calc(100%_-_36px))]">
+        <div
+          class="stat [min-height:106px] [padding:23px_28px] [&+.stat]:[border-left:1px_solid_var(--color-line)] [&_strong]:[display:block] [&_strong]:[font-family:var(--font-display)] [&_strong]:[font-size:25px] [&_strong]:[font-weight:700] [&_strong]:[letter-spacing:-.05em] [&_span]:[display:block] [&_span]:[margin-top:6px] [&_span]:[color:var(--color-muted)] [&_span]:[font-size:11px] max-[800px]:[&:nth-child(3)]:[border-top:1px_solid_var(--color-line)] max-[800px]:[&:nth-child(3)]:[border-left:0] max-[800px]:[&:nth-child(4)]:[border-top:1px_solid_var(--color-line)] max-[600px]:[min-height:90px] max-[600px]:[padding:18px_16px] max-[600px]:[&_strong]:[font-size:22px] max-[600px]:[&_span]:[font-size:10px]">
+          <strong>12+</strong><span>Years building software</span>
+        </div>
+        <div
+          class="stat [min-height:106px] [padding:23px_28px] [&+.stat]:[border-left:1px_solid_var(--color-line)] [&_strong]:[display:block] [&_strong]:[font-family:var(--font-display)] [&_strong]:[font-size:25px] [&_strong]:[font-weight:700] [&_strong]:[letter-spacing:-.05em] [&_span]:[display:block] [&_span]:[margin-top:6px] [&_span]:[color:var(--color-muted)] [&_span]:[font-size:11px] max-[800px]:[&:nth-child(3)]:[border-top:1px_solid_var(--color-line)] max-[800px]:[&:nth-child(3)]:[border-left:0] max-[800px]:[&:nth-child(4)]:[border-top:1px_solid_var(--color-line)] max-[600px]:[min-height:90px] max-[600px]:[padding:18px_16px] max-[600px]:[&_strong]:[font-size:22px] max-[600px]:[&_span]:[font-size:10px]">
+          <strong>Full stack</strong><span>Frontend, backend and DevOps</span>
+        </div>
+        <div
+          class="stat [min-height:106px] [padding:23px_28px] [&+.stat]:[border-left:1px_solid_var(--color-line)] [&_strong]:[display:block] [&_strong]:[font-family:var(--font-display)] [&_strong]:[font-size:25px] [&_strong]:[font-weight:700] [&_strong]:[letter-spacing:-.05em] [&_span]:[display:block] [&_span]:[margin-top:6px] [&_span]:[color:var(--color-muted)] [&_span]:[font-size:11px] max-[800px]:[&:nth-child(3)]:[border-top:1px_solid_var(--color-line)] max-[800px]:[&:nth-child(3)]:[border-left:0] max-[800px]:[&:nth-child(4)]:[border-top:1px_solid_var(--color-line)] max-[600px]:[min-height:90px] max-[600px]:[padding:18px_16px] max-[600px]:[&_strong]:[font-size:22px] max-[600px]:[&_span]:[font-size:10px]">
+          <strong>API first</strong><span>Integrations & services</span>
+        </div>
+        <div
+          class="stat [min-height:106px] [padding:23px_28px] [&+.stat]:[border-left:1px_solid_var(--color-line)] [&_strong]:[display:block] [&_strong]:[font-family:var(--font-display)] [&_strong]:[font-size:25px] [&_strong]:[font-weight:700] [&_strong]:[letter-spacing:-.05em] [&_span]:[display:block] [&_span]:[margin-top:6px] [&_span]:[color:var(--color-muted)] [&_span]:[font-size:11px] max-[800px]:[&:nth-child(3)]:[border-top:1px_solid_var(--color-line)] max-[800px]:[&:nth-child(3)]:[border-left:0] max-[800px]:[&:nth-child(4)]:[border-top:1px_solid_var(--color-line)] max-[600px]:[min-height:90px] max-[600px]:[padding:18px_16px] max-[600px]:[&_strong]:[font-size:22px] max-[600px]:[&_span]:[font-size:10px]">
+          <strong>Since 2013</strong><span>In professional software</span>
         </div>
       </div>
     </section>
 
-    <section class="section wrap" id="about" aria-labelledby="about-title">
-      <div class="about-layout">
+    <section class="tech-stack [border-bottom:1px_solid_var(--color-line)] [background:#fff] [padding-block:22px_25px]"
+      aria-labelledby="tech-stack-title">
+      <div
+        class="wrap [width:min(1120px,_calc(100%_-_48px))] [margin-inline:auto] max-[600px]:[width:min(1120px,_calc(100%_-_36px))]">
+        <h2
+          class="tech-stack-heading [margin-bottom:4px] [font-family:var(--font-display)] [font-size:18px] [font-weight:800] [letter-spacing:-.04em]"
+          id="tech-stack-title">Tech Stack</h2>
+        <p class="tech-stack-subtitle [margin-bottom:13px] [color:var(--color-muted)] [font-size:12px]">Technologies I
+          work with</p>
+        <div
+          class="tech-stack-grid [display:grid] [grid-template-columns:repeat(14,_minmax(0,_1fr))] [gap:9px] max-[800px]:[grid-template-columns:repeat(6,_minmax(0,_1fr))] max-[600px]:[grid-template-columns:repeat(4,_minmax(0,_1fr))]">
+          <div
+            class="tech-item [display:flex] [min-height:75px] [flex-direction:column] [align-items:center] [justify-content:center] [gap:5px] [border:1px_solid_#e8ece8] [border-radius:10px] [background:#fff] [transition:transform_.2s_ease,_border-color_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-3px)] hover:[border-color:#d4dfc7] hover:[box-shadow:0_8px_18px_rgb(25_34_31_/_6%)]">
+            <span
+              class="tech-icon tech-python [display:grid] [height:30px] [place-items:center] [font-family:var(--font-display)] [font-size:21px] [font-weight:800] [line-height:1] [color:#3776ab]"
+              aria-hidden="true">Py</span><span
+              class="tech-name [color:#344039] [font-size:10px] [font-weight:700] [text-align:center]">Python</span>
+          </div>
+          <div
+            class="tech-item [display:flex] [min-height:75px] [flex-direction:column] [align-items:center] [justify-content:center] [gap:5px] [border:1px_solid_#e8ece8] [border-radius:10px] [background:#fff] [transition:transform_.2s_ease,_border-color_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-3px)] hover:[border-color:#d4dfc7] hover:[box-shadow:0_8px_18px_rgb(25_34_31_/_6%)]">
+            <span
+              class="tech-icon tech-fastapi [display:grid] [height:30px] [place-items:center] [font-family:var(--font-display)] [font-size:21px] [font-weight:800] [line-height:1] [color:#13a88b]"
+              aria-hidden="true">ϟ</span><span
+              class="tech-name [color:#344039] [font-size:10px] [font-weight:700] [text-align:center]">FastAPI</span>
+          </div>
+          <div
+            class="tech-item [display:flex] [min-height:75px] [flex-direction:column] [align-items:center] [justify-content:center] [gap:5px] [border:1px_solid_#e8ece8] [border-radius:10px] [background:#fff] [transition:transform_.2s_ease,_border-color_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-3px)] hover:[border-color:#d4dfc7] hover:[box-shadow:0_8px_18px_rgb(25_34_31_/_6%)]">
+            <span
+              class="tech-icon tech-node [display:grid] [height:30px] [place-items:center] [font-family:var(--font-display)] [font-size:21px] [font-weight:800] [line-height:1] [color:#488b45] [font-size:14px]"
+              aria-hidden="true">JS</span><span
+              class="tech-name [color:#344039] [font-size:10px] [font-weight:700] [text-align:center]">Node.js</span>
+          </div>
+          <div
+            class="tech-item [display:flex] [min-height:75px] [flex-direction:column] [align-items:center] [justify-content:center] [gap:5px] [border:1px_solid_#e8ece8] [border-radius:10px] [background:#fff] [transition:transform_.2s_ease,_border-color_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-3px)] hover:[border-color:#d4dfc7] hover:[box-shadow:0_8px_18px_rgb(25_34_31_/_6%)]">
+            <span
+              class="tech-icon tech-react [display:grid] [height:30px] [place-items:center] [font-family:var(--font-display)] [font-size:21px] [font-weight:800] [line-height:1] [color:#0ea5e9]"
+              aria-hidden="true">⚛</span><span
+              class="tech-name [color:#344039] [font-size:10px] [font-weight:700] [text-align:center]">React</span>
+          </div>
+          <div
+            class="tech-item [display:flex] [min-height:75px] [flex-direction:column] [align-items:center] [justify-content:center] [gap:5px] [border:1px_solid_#e8ece8] [border-radius:10px] [background:#fff] [transition:transform_.2s_ease,_border-color_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-3px)] hover:[border-color:#d4dfc7] hover:[box-shadow:0_8px_18px_rgb(25_34_31_/_6%)]">
+            <span
+              class="tech-icon tech-angular [display:grid] [height:30px] [place-items:center] [font-family:var(--font-display)] [font-size:21px] [font-weight:800] [line-height:1] [color:#dd0031]"
+              aria-hidden="true">A</span><span
+              class="tech-name [color:#344039] [font-size:10px] [font-weight:700] [text-align:center]">Angular</span>
+          </div>
+          <div
+            class="tech-item [display:flex] [min-height:75px] [flex-direction:column] [align-items:center] [justify-content:center] [gap:5px] [border:1px_solid_#e8ece8] [border-radius:10px] [background:#fff] [transition:transform_.2s_ease,_border-color_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-3px)] hover:[border-color:#d4dfc7] hover:[box-shadow:0_8px_18px_rgb(25_34_31_/_6%)]">
+            <span
+              class="tech-icon tech-vue [display:grid] [height:30px] [place-items:center] [font-family:var(--font-display)] [font-size:21px] [font-weight:800] [line-height:1] [color:#42b883]"
+              aria-hidden="true">V</span><span
+              class="tech-name [color:#344039] [font-size:10px] [font-weight:700] [text-align:center]">Vue.js</span>
+          </div>
+          <div
+            class="tech-item [display:flex] [min-height:75px] [flex-direction:column] [align-items:center] [justify-content:center] [gap:5px] [border:1px_solid_#e8ece8] [border-radius:10px] [background:#fff] [transition:transform_.2s_ease,_border-color_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-3px)] hover:[border-color:#d4dfc7] hover:[box-shadow:0_8px_18px_rgb(25_34_31_/_6%)]">
+            <span
+              class="tech-icon tech-php [display:grid] [height:30px] [place-items:center] [font-family:var(--font-display)] [font-size:21px] [font-weight:800] [line-height:1] [height:22px] [align-self:center] [border-radius:50%] [background:#667bb0] [color:#fff] [padding:0_5px] [font-size:12px] [font-style:italic]"
+              aria-hidden="true">php</span><span
+              class="tech-name [color:#344039] [font-size:10px] [font-weight:700] [text-align:center]">PHP</span>
+          </div>
+          <div
+            class="tech-item [display:flex] [min-height:75px] [flex-direction:column] [align-items:center] [justify-content:center] [gap:5px] [border:1px_solid_#e8ece8] [border-radius:10px] [background:#fff] [transition:transform_.2s_ease,_border-color_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-3px)] hover:[border-color:#d4dfc7] hover:[box-shadow:0_8px_18px_rgb(25_34_31_/_6%)]">
+            <span
+              class="tech-icon tech-laravel [display:grid] [height:30px] [place-items:center] [font-family:var(--font-display)] [font-size:21px] [font-weight:800] [line-height:1] [color:#f24b45]"
+              aria-hidden="true">L</span><span
+              class="tech-name [color:#344039] [font-size:10px] [font-weight:700] [text-align:center]">Laravel</span>
+          </div>
+          <div
+            class="tech-item [display:flex] [min-height:75px] [flex-direction:column] [align-items:center] [justify-content:center] [gap:5px] [border:1px_solid_#e8ece8] [border-radius:10px] [background:#fff] [transition:transform_.2s_ease,_border-color_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-3px)] hover:[border-color:#d4dfc7] hover:[box-shadow:0_8px_18px_rgb(25_34_31_/_6%)]">
+            <span
+              class="tech-icon tech-mysql [display:grid] [height:30px] [place-items:center] [font-family:var(--font-display)] [font-size:21px] [font-weight:800] [line-height:1] [color:#0879a8]"
+              aria-hidden="true">SQL</span><span
+              class="tech-name [color:#344039] [font-size:10px] [font-weight:700] [text-align:center]">MySQL</span>
+          </div>
+          <div
+            class="tech-item [display:flex] [min-height:75px] [flex-direction:column] [align-items:center] [justify-content:center] [gap:5px] [border:1px_solid_#e8ece8] [border-radius:10px] [background:#fff] [transition:transform_.2s_ease,_border-color_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-3px)] hover:[border-color:#d4dfc7] hover:[box-shadow:0_8px_18px_rgb(25_34_31_/_6%)]">
+            <span
+              class="tech-icon tech-postgres [display:grid] [height:30px] [place-items:center] [font-family:var(--font-display)] [font-size:21px] [font-weight:800] [line-height:1] [color:#336791]"
+              aria-hidden="true">PG</span><span
+              class="tech-name [color:#344039] [font-size:10px] [font-weight:700] [text-align:center]">PostgreSQL</span>
+          </div>
+          <div
+            class="tech-item [display:flex] [min-height:75px] [flex-direction:column] [align-items:center] [justify-content:center] [gap:5px] [border:1px_solid_#e8ece8] [border-radius:10px] [background:#fff] [transition:transform_.2s_ease,_border-color_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-3px)] hover:[border-color:#d4dfc7] hover:[box-shadow:0_8px_18px_rgb(25_34_31_/_6%)]">
+            <span
+              class="tech-icon tech-aws [display:grid] [height:30px] [place-items:center] [font-family:var(--font-display)] [font-size:21px] [font-weight:800] [line-height:1] [color:#253448] [font-size:17px]"
+              aria-hidden="true">aws</span><span
+              class="tech-name [color:#344039] [font-size:10px] [font-weight:700] [text-align:center]">AWS</span>
+          </div>
+          <div
+            class="tech-item [display:flex] [min-height:75px] [flex-direction:column] [align-items:center] [justify-content:center] [gap:5px] [border:1px_solid_#e8ece8] [border-radius:10px] [background:#fff] [transition:transform_.2s_ease,_border-color_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-3px)] hover:[border-color:#d4dfc7] hover:[box-shadow:0_8px_18px_rgb(25_34_31_/_6%)]">
+            <span
+              class="tech-icon tech-docker [display:grid] [height:30px] [place-items:center] [font-family:var(--font-display)] [font-size:21px] [font-weight:800] [line-height:1] [color:#168bd0]"
+              aria-hidden="true">▤</span><span
+              class="tech-name [color:#344039] [font-size:10px] [font-weight:700] [text-align:center]">Docker</span>
+          </div>
+          <div
+            class="tech-item [display:flex] [min-height:75px] [flex-direction:column] [align-items:center] [justify-content:center] [gap:5px] [border:1px_solid_#e8ece8] [border-radius:10px] [background:#fff] [transition:transform_.2s_ease,_border-color_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-3px)] hover:[border-color:#d4dfc7] hover:[box-shadow:0_8px_18px_rgb(25_34_31_/_6%)]">
+            <span
+              class="tech-icon tech-git [display:grid] [height:30px] [place-items:center] [font-family:var(--font-display)] [font-size:21px] [font-weight:800] [line-height:1] [color:#eb4a36]"
+              aria-hidden="true">◆</span><span
+              class="tech-name [color:#344039] [font-size:10px] [font-weight:700] [text-align:center]">Git</span>
+          </div>
+          <div
+            class="tech-item [display:flex] [min-height:75px] [flex-direction:column] [align-items:center] [justify-content:center] [gap:5px] [border:1px_solid_#e8ece8] [border-radius:10px] [background:#fff] [transition:transform_.2s_ease,_border-color_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-3px)] hover:[border-color:#d4dfc7] hover:[box-shadow:0_8px_18px_rgb(25_34_31_/_6%)]">
+            <span
+              class="tech-icon tech-linux [display:grid] [height:30px] [place-items:center] [font-family:var(--font-display)] [font-size:21px] [font-weight:800] [line-height:1] [color:#253448]"
+              aria-hidden="true">🐧</span><span
+              class="tech-name [color:#344039] [font-size:10px] [font-weight:700] [text-align:center]">Linux</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section wrap [padding-block:104px] max-[800px]:[padding-block:78px] max-[600px]:[padding-block:69px] [width:min(1120px,_calc(100%_-_48px))] [margin-inline:auto] max-[600px]:[width:min(1120px,_calc(100%_-_36px))]"
+      id="about" aria-labelledby="about-title">
+      <div
+        class="about-layout [display:grid] [grid-template-columns:.95fr_1.05fr] [gap:90px] [align-items:start] max-[800px]:[grid-template-columns:1fr] max-[800px]:[gap:33px] max-[800px]:[gap:26px]">
         <div>
-          <p class="section-kicker">A little about me</p>
-          <h2 class="section-heading" id="about-title">Good engineering makes hard things feel simple.</h2>
+          <p
+            class="section-kicker [margin-bottom:15px] [color:#698a37] [font-size:11px] [font-weight:700] [letter-spacing:.16em] [text-transform:uppercase]">
+            A little about me</p>
+          <h2
+            class="section-heading [max-width:660px] [margin-bottom:0] [font-family:var(--font-display)] [font-size:clamp(34px,_4.5vw,_53px)] [font-weight:600] [letter-spacing:-.065em] [line-height:1.12] max-[600px]:[font-size:clamp(34px,_9vw,_46px)]"
+            id="about-title">Good engineering makes hard things feel simple.</h2>
         </div>
-        <div class="about-copy">
+        <div class="about-copy [color:var(--color-muted)] [font-size:14px] [line-height:1.9] [&_p+p]:[margin-top:17px]">
           <p>For more than 12 years, I’ve helped build and improve web applications across backend services,
             front-end experiences, databases, integrations, and deployment workflows. I care about practical,
             maintainable solutions and the small details that make software dependable.</p>
@@ -1193,42 +266,69 @@
         </div>
       </div>
 
-      <div class="capabilities" id="expertise">
-        <p class="section-kicker">What I bring</p>
-        <h2 class="section-heading">The right tools for the whole stack.</h2>
-        <div class="capability-grid">
-          <article class="capability">
-            <span class="capability-icon" aria-hidden="true">⌘</span>
+      <div class="capabilities [padding-top:92px] max-[800px]:[padding-top:72px] max-[600px]:[padding-top:63px]"
+        id="expertise">
+        <p
+          class="section-kicker [margin-bottom:15px] [color:#698a37] [font-size:11px] [font-weight:700] [letter-spacing:.16em] [text-transform:uppercase]">
+          What I bring</p>
+        <h2
+          class="section-heading [max-width:660px] [margin-bottom:0] [font-family:var(--font-display)] [font-size:clamp(34px,_4.5vw,_53px)] [font-weight:600] [letter-spacing:-.065em] [line-height:1.12] max-[600px]:[font-size:clamp(34px,_9vw,_46px)]">
+          The right tools for the whole stack.</h2>
+        <div
+          class="capability-grid [display:grid] [grid-template-columns:repeat(3,_1fr)] [gap:13px] [margin-top:38px] max-[600px]:[grid-template-columns:1fr]">
+          <article
+            class="capability [min-height:190px] [border:1px_solid_var(--color-line)] [border-radius:17px] [background:rgb(255_255_255_/_58%)] [padding:23px] [transition:transform_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-4px)] hover:[box-shadow:0_14px_32px_rgb(25_34_31_/_6%)] [&_h3]:[margin:19px_0_8px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:15px] [&_h3]:[letter-spacing:-.025em] [&_p]:[margin-bottom:0] [&_p]:[color:var(--color-muted)] [&_p]:[font-size:12px] [&_p]:[line-height:1.75] max-[600px]:[min-height:auto]">
+            <span
+              class="capability-icon [display:grid] [width:37px] [height:37px] [place-items:center] [border-radius:11px] [background:#edf4df] [color:#507329] [font-size:15px] [font-weight:700]"
+              aria-hidden="true">⌘</span>
             <h3>Backend & APIs</h3>
             <p>Python, FastAPI, PHP, Laravel, CodeIgniter, Node.js, NestJS, Express.js, REST APIs.</p>
           </article>
-          <article class="capability">
-            <span class="capability-icon" aria-hidden="true">◈</span>
+          <article
+            class="capability [min-height:190px] [border:1px_solid_var(--color-line)] [border-radius:17px] [background:rgb(255_255_255_/_58%)] [padding:23px] [transition:transform_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-4px)] hover:[box-shadow:0_14px_32px_rgb(25_34_31_/_6%)] [&_h3]:[margin:19px_0_8px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:15px] [&_h3]:[letter-spacing:-.025em] [&_p]:[margin-bottom:0] [&_p]:[color:var(--color-muted)] [&_p]:[font-size:12px] [&_p]:[line-height:1.75] max-[600px]:[min-height:auto]">
+            <span
+              class="capability-icon [display:grid] [width:37px] [height:37px] [place-items:center] [border-radius:11px] [background:#edf4df] [color:#507329] [font-size:15px] [font-weight:700]"
+              aria-hidden="true">◈</span>
             <h3>Frontend</h3>
             <p>React, Vue 3, Angular, JavaScript, TypeScript, Tailwind CSS, Pinia, Vue Query.</p>
           </article>
-          <article class="capability">
-            <span class="capability-icon" aria-hidden="true">▧</span>
+          <article
+            class="capability [min-height:190px] [border:1px_solid_var(--color-line)] [border-radius:17px] [background:rgb(255_255_255_/_58%)] [padding:23px] [transition:transform_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-4px)] hover:[box-shadow:0_14px_32px_rgb(25_34_31_/_6%)] [&_h3]:[margin:19px_0_8px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:15px] [&_h3]:[letter-spacing:-.025em] [&_p]:[margin-bottom:0] [&_p]:[color:var(--color-muted)] [&_p]:[font-size:12px] [&_p]:[line-height:1.75] max-[600px]:[min-height:auto]">
+            <span
+              class="capability-icon [display:grid] [width:37px] [height:37px] [place-items:center] [border-radius:11px] [background:#edf4df] [color:#507329] [font-size:15px] [font-weight:700]"
+              aria-hidden="true">▧</span>
             <h3>CMS & e-commerce</h3>
             <p>WordPress, Joomla, and Magento.</p>
           </article>
-          <article class="capability">
-            <span class="capability-icon" aria-hidden="true">▤</span>
+          <article
+            class="capability [min-height:190px] [border:1px_solid_var(--color-line)] [border-radius:17px] [background:rgb(255_255_255_/_58%)] [padding:23px] [transition:transform_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-4px)] hover:[box-shadow:0_14px_32px_rgb(25_34_31_/_6%)] [&_h3]:[margin:19px_0_8px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:15px] [&_h3]:[letter-spacing:-.025em] [&_p]:[margin-bottom:0] [&_p]:[color:var(--color-muted)] [&_p]:[font-size:12px] [&_p]:[line-height:1.75] max-[600px]:[min-height:auto]">
+            <span
+              class="capability-icon [display:grid] [width:37px] [height:37px] [place-items:center] [border-radius:11px] [background:#edf4df] [color:#507329] [font-size:15px] [font-weight:700]"
+              aria-hidden="true">▤</span>
             <h3>Data & storage</h3>
             <p>MySQL, PostgreSQL, MongoDB, Redis, schema design, transactions, and query optimization.</p>
           </article>
-          <article class="capability">
-            <span class="capability-icon" aria-hidden="true">⛨</span>
+          <article
+            class="capability [min-height:190px] [border:1px_solid_var(--color-line)] [border-radius:17px] [background:rgb(255_255_255_/_58%)] [padding:23px] [transition:transform_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-4px)] hover:[box-shadow:0_14px_32px_rgb(25_34_31_/_6%)] [&_h3]:[margin:19px_0_8px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:15px] [&_h3]:[letter-spacing:-.025em] [&_p]:[margin-bottom:0] [&_p]:[color:var(--color-muted)] [&_p]:[font-size:12px] [&_p]:[line-height:1.75] max-[600px]:[min-height:auto]">
+            <span
+              class="capability-icon [display:grid] [width:37px] [height:37px] [place-items:center] [border-radius:11px] [background:#edf4df] [color:#507329] [font-size:15px] [font-weight:700]"
+              aria-hidden="true">⛨</span>
             <h3>Security & integration</h3>
             <p>OAuth 2.0, JWT, RBAC, AES-GCM, webhooks, gRPC, queues, and asynchronous workflows.</p>
           </article>
-          <article class="capability">
-            <span class="capability-icon" aria-hidden="true">☁</span>
+          <article
+            class="capability [min-height:190px] [border:1px_solid_var(--color-line)] [border-radius:17px] [background:rgb(255_255_255_/_58%)] [padding:23px] [transition:transform_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-4px)] hover:[box-shadow:0_14px_32px_rgb(25_34_31_/_6%)] [&_h3]:[margin:19px_0_8px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:15px] [&_h3]:[letter-spacing:-.025em] [&_p]:[margin-bottom:0] [&_p]:[color:var(--color-muted)] [&_p]:[font-size:12px] [&_p]:[line-height:1.75] max-[600px]:[min-height:auto]">
+            <span
+              class="capability-icon [display:grid] [width:37px] [height:37px] [place-items:center] [border-radius:11px] [background:#edf4df] [color:#507329] [font-size:15px] [font-weight:700]"
+              aria-hidden="true">☁</span>
             <h3>Cloud & delivery</h3>
             <p>AWS, GCP, Azure, Docker, Jenkins, Git, GitHub, GitLab, and CI/CD workflows.</p>
           </article>
-          <article class="capability">
-            <span class="capability-icon" aria-hidden="true">✳</span>
+          <article
+            class="capability [min-height:190px] [border:1px_solid_var(--color-line)] [border-radius:17px] [background:rgb(255_255_255_/_58%)] [padding:23px] [transition:transform_.2s_ease,_box-shadow_.2s_ease] hover:[transform:translateY(-4px)] hover:[box-shadow:0_14px_32px_rgb(25_34_31_/_6%)] [&_h3]:[margin:19px_0_8px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:15px] [&_h3]:[letter-spacing:-.025em] [&_p]:[margin-bottom:0] [&_p]:[color:var(--color-muted)] [&_p]:[font-size:12px] [&_p]:[line-height:1.75] max-[600px]:[min-height:auto]">
+            <span
+              class="capability-icon [display:grid] [width:37px] [height:37px] [place-items:center] [border-radius:11px] [background:#edf4df] [color:#507329] [font-size:15px] [font-weight:700]"
+              aria-hidden="true">✳</span>
             <h3>Quality & teamwork</h3>
             <p>Unit, integration, and E2E testing, code review, Agile/Scrum, and collaborative delivery.</p>
           </article>
@@ -1236,107 +336,190 @@
       </div>
     </section>
 
-    <section class="section work-section" id="work" aria-labelledby="work-title">
-      <div class="wrap">
-        <p class="section-kicker">Selected experience</p>
-        <h2 class="section-heading" id="work-title">Building products with purpose.</h2>
-        <p class="section-intro">A snapshot of the platforms and problems I’ve worked on. Details are kept at a
+    <section
+      class="section work-section [padding-block:104px] max-[800px]:[padding-block:78px] max-[600px]:[padding-block:69px] [background:#202a25] [color:#fff] [&_.section-kicker]:[color:var(--color-green)] [&_.section-intro]:[color:#b7c0b8]"
+      id="work" aria-labelledby="work-title">
+      <div
+        class="wrap [width:min(1120px,_calc(100%_-_48px))] [margin-inline:auto] max-[600px]:[width:min(1120px,_calc(100%_-_36px))]">
+        <p
+          class="section-kicker [margin-bottom:15px] [color:#698a37] [font-size:11px] [font-weight:700] [letter-spacing:.16em] [text-transform:uppercase]">
+          Selected experience</p>
+        <h2
+          class="section-heading [max-width:660px] [margin-bottom:0] [font-family:var(--font-display)] [font-size:clamp(34px,_4.5vw,_53px)] [font-weight:600] [letter-spacing:-.065em] [line-height:1.12] max-[600px]:[font-size:clamp(34px,_9vw,_46px)]"
+          id="work-title">Building products with purpose.</h2>
+        <p
+          class="section-intro [max-width:530px] [margin:17px_0_0] [color:var(--color-muted)] [font-size:14px] [line-height:1.8]">
+          A snapshot of the platforms and problems I’ve worked on. Details are kept at a
           high level to respect client and project confidentiality.</p>
-        <div class="project-grid">
-          <article class="project">
-            <div class="project-number"><span class="project-label">Enterprise · Public sector</span><span>01</span>
+        <div
+          class="project-grid [display:grid] [grid-template-columns:1fr_1fr] [gap:16px] [margin-top:39px] max-[600px]:[grid-template-columns:1fr]">
+          <article
+            class="project [position:relative] [overflow:hidden] [min-height:265px] [border:1px_solid_rgb(255_255_255_/_12%)] [border-radius:17px] [background:rgb(255_255_255_/_4%)] [padding:28px] [transition:border-color_.2s_ease,_transform_.2s_ease] hover:[transform:translateY(-4px)] hover:[border-color:rgb(197_245_106_/_48%)] [&_h3]:[margin:37px_0_11px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:23px] [&_h3]:[font-weight:600] [&_h3]:[letter-spacing:-.045em] [&_p]:[max-width:490px] [&_p]:[margin-bottom:18px] [&_p]:[color:#c0c8c1] [&_p]:[font-size:12px] [&_p]:[line-height:1.85] max-[600px]:[min-height:auto] max-[600px]:[padding:23px] max-[600px]:[&_h3]:[margin-top:30px]">
+            <div
+              class="project-number [display:flex] [align-items:center] [justify-content:space-between] [color:#c3cdbe] [font-size:11px]">
+              <span
+                class="project-label [border:1px_solid_rgb(197_245_106_/_27%)] [border-radius:999px] [color:var(--color-green)] [padding:6px_10px] [font-size:10px]">Enterprise
+                · Public sector</span><span>01</span>
             </div>
-            <h3>Digital Sansad</h3>
+            <h3>Sampurna Digital Sansad</h3>
             <p>Full-stack work on digital services for member onboarding, attendance, claims, and committee
               workflows, including API development, reusable UI, security utilities, and service integration.</p>
-            <div class="tag-list"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React
-                / Vue</span><span class="tag">PostgreSQL</span></div>
+            <div class="tag-list [display:flex] [flex-wrap:wrap] [gap:7px]"><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">Python</span><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">FastAPI</span><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">React
+                / Vue</span><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">PostgreSQL</span>
+            </div>
           </article>
-          <article class="project">
-            <div class="project-number"><span class="project-label">Product engineering</span><span>02</span></div>
+          <article
+            class="project [position:relative] [overflow:hidden] [min-height:265px] [border:1px_solid_rgb(255_255_255_/_12%)] [border-radius:17px] [background:rgb(255_255_255_/_4%)] [padding:28px] [transition:border-color_.2s_ease,_transform_.2s_ease] hover:[transform:translateY(-4px)] hover:[border-color:rgb(197_245_106_/_48%)] [&_h3]:[margin:37px_0_11px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:23px] [&_h3]:[font-weight:600] [&_h3]:[letter-spacing:-.045em] [&_p]:[max-width:490px] [&_p]:[margin-bottom:18px] [&_p]:[color:#c0c8c1] [&_p]:[font-size:12px] [&_p]:[line-height:1.85] max-[600px]:[min-height:auto] max-[600px]:[padding:23px] max-[600px]:[&_h3]:[margin-top:30px]">
+            <div
+              class="project-number [display:flex] [align-items:center] [justify-content:space-between] [color:#c3cdbe] [font-size:11px]">
+              <span
+                class="project-label [border:1px_solid_rgb(197_245_106_/_27%)] [border-radius:999px] [color:var(--color-green)] [padding:6px_10px] [font-size:10px]">Product
+                engineering</span><span>02</span>
+            </div>
             <h3>Full-stack application development</h3>
             <p>Reusable frontend views and backend services, REST integrations, data-driven forms and filters,
               and relational database work for business-critical applications.</p>
-            <div class="tag-list"><span class="tag">React</span><span class="tag">FastAPI</span><span
-                class="tag">MySQL</span><span class="tag">REST APIs</span></div>
+            <div class="tag-list [display:flex] [flex-wrap:wrap] [gap:7px]"><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">React</span><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">FastAPI</span><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">MySQL</span><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">REST
+                APIs</span></div>
           </article>
-          <article class="project">
-            <div class="project-number"><span class="project-label">Application security</span><span>03</span></div>
+          <article
+            class="project [position:relative] [overflow:hidden] [min-height:265px] [border:1px_solid_rgb(255_255_255_/_12%)] [border-radius:17px] [background:rgb(255_255_255_/_4%)] [padding:28px] [transition:border-color_.2s_ease,_transform_.2s_ease] hover:[transform:translateY(-4px)] hover:[border-color:rgb(197_245_106_/_48%)] [&_h3]:[margin:37px_0_11px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:23px] [&_h3]:[font-weight:600] [&_h3]:[letter-spacing:-.045em] [&_p]:[max-width:490px] [&_p]:[margin-bottom:18px] [&_p]:[color:#c0c8c1] [&_p]:[font-size:12px] [&_p]:[line-height:1.85] max-[600px]:[min-height:auto] max-[600px]:[padding:23px] max-[600px]:[&_h3]:[margin-top:30px]">
+            <div
+              class="project-number [display:flex] [align-items:center] [justify-content:space-between] [color:#c3cdbe] [font-size:11px]">
+              <span
+                class="project-label [border:1px_solid_rgb(197_245_106_/_27%)] [border-radius:999px] [color:var(--color-green)] [padding:6px_10px] [font-size:10px]">Application
+                security</span><span>03</span>
+            </div>
             <h3>Authentication & access control</h3>
             <p>Secure application workflows with role-based access, plus hands-on experience with token-based
               authentication and encryption utilities.</p>
-            <div class="tag-list"><span class="tag">JWT</span><span class="tag">RBAC</span><span class="tag">OAuth
-                2.0</span><span class="tag">AES-GCM</span></div>
+            <div class="tag-list [display:flex] [flex-wrap:wrap] [gap:7px]"><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">JWT</span><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">RBAC</span><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">OAuth
+                2.0</span><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">AES-GCM</span>
+            </div>
           </article>
-          <article class="project">
-            <div class="project-number"><span class="project-label">Integration & data</span><span>04</span></div>
+          <article
+            class="project [position:relative] [overflow:hidden] [min-height:265px] [border:1px_solid_rgb(255_255_255_/_12%)] [border-radius:17px] [background:rgb(255_255_255_/_4%)] [padding:28px] [transition:border-color_.2s_ease,_transform_.2s_ease] hover:[transform:translateY(-4px)] hover:[border-color:rgb(197_245_106_/_48%)] [&_h3]:[margin:37px_0_11px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:23px] [&_h3]:[font-weight:600] [&_h3]:[letter-spacing:-.045em] [&_p]:[max-width:490px] [&_p]:[margin-bottom:18px] [&_p]:[color:#c0c8c1] [&_p]:[font-size:12px] [&_p]:[line-height:1.85] max-[600px]:[min-height:auto] max-[600px]:[padding:23px] max-[600px]:[&_h3]:[margin-top:30px]">
+            <div
+              class="project-number [display:flex] [align-items:center] [justify-content:space-between] [color:#c3cdbe] [font-size:11px]">
+              <span
+                class="project-label [border:1px_solid_rgb(197_245_106_/_27%)] [border-radius:999px] [color:var(--color-green)] [padding:6px_10px] [font-size:10px]">Integration
+                & data</span><span>04</span>
+            </div>
             <h3>APIs & asynchronous workflows</h3>
             <p>Integrations and data workflows involving webhooks, event-driven processing, data migration,
               validation, and reliable request handling.</p>
-            <div class="tag-list"><span class="tag">Webhooks</span><span class="tag">Kafka</span><span
-                class="tag">ETL</span><span class="tag">Queues</span></div>
+            <div class="tag-list [display:flex] [flex-wrap:wrap] [gap:7px]"><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">Webhooks</span><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">Kafka</span><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">ETL</span><span
+                class="tag [border:1px_solid_rgb(255_255_255_/_13%)] [border-radius:999px] [color:#d4dbd4] [padding:6px_9px] [font-size:10px]">Queues</span>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section wrap" id="experience" aria-labelledby="experience-title">
-      <div class="experience-layout">
+    <section
+      class="section wrap [padding-block:104px] max-[800px]:[padding-block:78px] max-[600px]:[padding-block:69px] [width:min(1120px,_calc(100%_-_48px))] [margin-inline:auto] max-[600px]:[width:min(1120px,_calc(100%_-_36px))]"
+      id="experience" aria-labelledby="experience-title">
+      <div
+        class="experience-layout [display:grid] [grid-template-columns:.8fr_1.2fr] [gap:88px] [align-items:start] max-[800px]:[grid-template-columns:1fr] max-[800px]:[gap:33px] max-[800px]:[gap:31px]">
         <div>
-          <p class="section-kicker">The journey so far</p>
-          <h2 class="section-heading" id="experience-title">A career shaped by building.</h2>
-          <p class="section-intro">Growing from PHP engineering into full-stack product development, across a range
+          <p
+            class="section-kicker [margin-bottom:15px] [color:#698a37] [font-size:11px] [font-weight:700] [letter-spacing:.16em] [text-transform:uppercase]">
+            The journey so far</p>
+          <h2
+            class="section-heading [max-width:660px] [margin-bottom:0] [font-family:var(--font-display)] [font-size:clamp(34px,_4.5vw,_53px)] [font-weight:600] [letter-spacing:-.065em] [line-height:1.12] max-[600px]:[font-size:clamp(34px,_9vw,_46px)]"
+            id="experience-title">A career shaped by building.</h2>
+          <p
+            class="section-intro [max-width:530px] [margin:17px_0_0] [color:var(--color-muted)] [font-size:14px] [line-height:1.8]">
+            Growing from PHP engineering into full-stack product development, across a range
             of teams and industries.</p>
         </div>
-        <div class="experience-list">
-          <article class="experience-item">
+        <div class="experience-list [border-top:1px_solid_var(--color-line)]">
+          <article
+            class="experience-item [display:grid] [grid-template-columns:1fr_auto] [gap:8px_20px] [border-bottom:1px_solid_var(--color-line)] [padding:23px_0] [&_h3]:[margin-bottom:5px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:15px] [&_h3]:[font-weight:700] [&_h3]:[letter-spacing:-.025em] [&_p]:[margin-bottom:0] [&_p]:[color:var(--color-muted)] [&_p]:[font-size:12px] [&_p]:[line-height:1.7] max-[600px]:[grid-template-columns:1fr] max-[600px]:[gap:7px]">
             <div>
               <h3>Full Stack Developer</h3>
               <p>Aurionpro Solutions Ltd. · New Delhi</p>
             </div>
-            <time class="experience-date" datetime="2025-02">Feb 2025 — Present</time>
+            <time
+              class="experience-date [color:#617d3a] [font-size:11px] [font-weight:700] [white-space:nowrap] max-[600px]:[grid-row:1]"
+              datetime="2025-02">Feb 2025 — Present</time>
           </article>
-          <article class="experience-item">
+          <article
+            class="experience-item [display:grid] [grid-template-columns:1fr_auto] [gap:8px_20px] [border-bottom:1px_solid_var(--color-line)] [padding:23px_0] [&_h3]:[margin-bottom:5px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:15px] [&_h3]:[font-weight:700] [&_h3]:[letter-spacing:-.025em] [&_p]:[margin-bottom:0] [&_p]:[color:var(--color-muted)] [&_p]:[font-size:12px] [&_p]:[line-height:1.7] max-[600px]:[grid-template-columns:1fr] max-[600px]:[gap:7px]">
             <div>
               <h3>Senior Full Stack Developer</h3>
               <p>CIPL · New Delhi</p>
             </div>
-            <time class="experience-date" datetime="2024-04">Apr 2024 — Aug 2024</time>
+            <time
+              class="experience-date [color:#617d3a] [font-size:11px] [font-weight:700] [white-space:nowrap] max-[600px]:[grid-row:1]"
+              datetime="2024-04">Apr 2024 — Aug 2024</time>
           </article>
-          <article class="experience-item">
+          <article
+            class="experience-item [display:grid] [grid-template-columns:1fr_auto] [gap:8px_20px] [border-bottom:1px_solid_var(--color-line)] [padding:23px_0] [&_h3]:[margin-bottom:5px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:15px] [&_h3]:[font-weight:700] [&_h3]:[letter-spacing:-.025em] [&_p]:[margin-bottom:0] [&_p]:[color:var(--color-muted)] [&_p]:[font-size:12px] [&_p]:[line-height:1.7] max-[600px]:[grid-template-columns:1fr] max-[600px]:[gap:7px]">
             <div>
               <h3>Senior Software Engineer</h3>
               <p>AAPC India Pvt. Ltd. · Noida</p>
             </div>
-            <time class="experience-date" datetime="2019-12">Dec 2019 — Nov 2023</time>
+            <time
+              class="experience-date [color:#617d3a] [font-size:11px] [font-weight:700] [white-space:nowrap] max-[600px]:[grid-row:1]"
+              datetime="2019-12">Dec 2019 — Nov 2023</time>
           </article>
-          <article class="experience-item">
+          <article
+            class="experience-item [display:grid] [grid-template-columns:1fr_auto] [gap:8px_20px] [border-bottom:1px_solid_var(--color-line)] [padding:23px_0] [&_h3]:[margin-bottom:5px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:15px] [&_h3]:[font-weight:700] [&_h3]:[letter-spacing:-.025em] [&_p]:[margin-bottom:0] [&_p]:[color:var(--color-muted)] [&_p]:[font-size:12px] [&_p]:[line-height:1.7] max-[600px]:[grid-template-columns:1fr] max-[600px]:[gap:7px]">
             <div>
               <h3>Senior Software Engineer</h3>
               <p>Perfume Booth Pvt. Ltd. · New Delhi</p>
             </div>
-            <time class="experience-date" datetime="2017-05">May 2017 — Nov 2019</time>
+            <time
+              class="experience-date [color:#617d3a] [font-size:11px] [font-weight:700] [white-space:nowrap] max-[600px]:[grid-row:1]"
+              datetime="2017-05">May 2017 — Nov 2019</time>
           </article>
-          <article class="experience-item">
+          <article
+            class="experience-item [display:grid] [grid-template-columns:1fr_auto] [gap:8px_20px] [border-bottom:1px_solid_var(--color-line)] [padding:23px_0] [&_h3]:[margin-bottom:5px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:15px] [&_h3]:[font-weight:700] [&_h3]:[letter-spacing:-.025em] [&_p]:[margin-bottom:0] [&_p]:[color:var(--color-muted)] [&_p]:[font-size:12px] [&_p]:[line-height:1.7] max-[600px]:[grid-template-columns:1fr] max-[600px]:[gap:7px]">
             <div>
               <h3>PHP Engineer</h3>
               <p>B. Jain Publishers Pvt. Ltd. · Noida</p>
             </div>
-            <time class="experience-date" datetime="2013-01">Jan 2013 — Apr 2017</time>
+            <time
+              class="experience-date [color:#617d3a] [font-size:11px] [font-weight:700] [white-space:nowrap] max-[600px]:[grid-row:1]"
+              datetime="2013-01">Jan 2013 — Apr 2017</time>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="education" aria-label="Education and certifications">
-      <div class="education-grid wrap section">
-        <div class="education-block">
-          <p class="section-kicker">Education</p>
+    <section class="education [border-top:1px_solid_var(--color-line)] [background:#eef0e8]"
+      aria-label="Education and certifications">
+      <div
+        class="education-grid wrap section [display:grid] [grid-template-columns:1fr_1fr] [gap:68px] max-[600px]:[grid-template-columns:1fr] max-[600px]:[gap:34px] [width:min(1120px,_calc(100%_-_48px))] [margin-inline:auto] max-[600px]:[width:min(1120px,_calc(100%_-_36px))] [padding-block:104px] max-[800px]:[padding-block:78px] max-[600px]:[padding-block:69px]">
+        <div
+          class="education-block [padding-top:25px] [border-top:1px_solid_#cbd1c4] [&_h3]:[margin-bottom:8px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:16px] [&_p]:[color:var(--color-muted)] [&_p]:[font-size:12px] [&_p]:[line-height:1.8] [&_li]:[color:var(--color-muted)] [&_li]:[font-size:12px] [&_li]:[line-height:1.8] [&_ul]:[margin:10px_0_0] [&_ul]:[padding-left:18px]">
+          <p
+            class="section-kicker [margin-bottom:15px] [color:#698a37] [font-size:11px] [font-weight:700] [letter-spacing:.16em] [text-transform:uppercase]">
+            Education</p>
           <h3>Master in Computer Application (MCA)</h3>
           <p>GBT University, Lucknow, India · Jul 2010</p>
         </div>
-        <div class="education-block">
-          <p class="section-kicker">Certifications</p>
+        <div
+          class="education-block [padding-top:25px] [border-top:1px_solid_#cbd1c4] [&_h3]:[margin-bottom:8px] [&_h3]:[font-family:var(--font-display)] [&_h3]:[font-size:16px] [&_p]:[color:var(--color-muted)] [&_p]:[font-size:12px] [&_p]:[line-height:1.8] [&_li]:[color:var(--color-muted)] [&_li]:[font-size:12px] [&_li]:[line-height:1.8] [&_ul]:[margin:10px_0_0] [&_ul]:[padding-left:18px]">
+          <p
+            class="section-kicker [margin-bottom:15px] [color:#698a37] [font-size:11px] [font-weight:700] [letter-spacing:.16em] [text-transform:uppercase]">
+            Certifications</p>
           <h3>Always learning</h3>
           <ul>
             <li>TCS iON Career Edge — AI Foundation</li>
@@ -1346,28 +529,42 @@
       </div>
     </section>
 
-    <section class="section wrap" id="contact" aria-labelledby="contact-title">
-      <div class="contact">
-        <p class="section-kicker">Have a project in mind?</p>
-        <h2 class="section-heading" id="contact-title">Let’s build something that matters.</h2>
-        <p class="section-intro">Interested in full-stack engineering, APIs, and thoughtful digital products?
+    <section
+      class="section wrap [padding-block:104px] max-[800px]:[padding-block:78px] max-[600px]:[padding-block:69px] [width:min(1120px,_calc(100%_-_48px))] [margin-inline:auto] max-[600px]:[width:min(1120px,_calc(100%_-_36px))]"
+      id="contact" aria-labelledby="contact-title">
+      <div
+        class="contact [position:relative] [overflow:hidden] [border-radius:22px] [background:var(--color-green)] [padding:clamp(36px,_7vw,_72px)] [&::after]:[position:absolute] [&::after]:[top:-130px] [&::after]:[right:-60px] [&::after]:[width:330px] [&::after]:[height:330px] [&::after]:[border:1px_solid_rgb(25_34_31_/_10%)] [&::after]:[border-radius:50%] [&::after]:[box-shadow:0_0_0_35px_rgb(25_34_31_/_3%),_0_0_0_75px_rgb(25_34_31_/_3%)] [&::after]:[content:''] [&::after]:[pointer-events:none] [&_.section-kicker]:[color:#435d27] [&_.section-heading]:[max-width:620px] [&_.section-heading]:[font-size:clamp(36px,_5.2vw,_61px)] [&_.section-intro]:[max-width:460px] [&_.section-intro]:[color:#43503b] [&_.button]:[position:relative] [&_.button]:[z-index:1] [&_.button]:[border-color:var(--color-ink)] [&_.button]:[background:var(--color-ink)] [&_.button-light]:border-[rgb(25_34_31_/_30%)]! [&_.button-light]:[background:transparent] [&_.button-light]:[color:var(--color-ink)] [&_.button-light:hover]:bg-[rgb(255_255_255_/_38%)]! max-[600px]:[border-radius:17px]">
+        <p
+          class="section-kicker [margin-bottom:15px] [color:#698a37] [font-size:11px] [font-weight:700] [letter-spacing:.16em] [text-transform:uppercase]">
+          Have a project in mind?</p>
+        <h2
+          class="section-heading [max-width:660px] [margin-bottom:0] [font-family:var(--font-display)] [font-size:clamp(34px,_4.5vw,_53px)] [font-weight:600] [letter-spacing:-.065em] [line-height:1.12] max-[600px]:[font-size:clamp(34px,_9vw,_46px)]"
+          id="contact-title">Let’s build something that matters.</h2>
+        <p
+          class="section-intro [max-width:530px] [margin:17px_0_0] [color:var(--color-muted)] [font-size:14px] [line-height:1.8]">
+          Interested in full-stack engineering, APIs, and thoughtful digital products?
           I’d love to hear what you’re working on.</p>
-        <div class="contact-actions">
-          <a class="button" href="mailto:mohd.afroj.soft@gmail.com">Email me <span aria-hidden="true">↗</span></a>
-          <a class="button button-light" href="https://www.linkedin.com/in/mohd-afroj-206b4832" target="_blank"
-            rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-          <a class="button button-light" href="https://github.com/mohdafroj" target="_blank"
-            rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        <div class="contact-actions [display:flex] [flex-wrap:wrap] [gap:10px] [margin-top:25px]">
+          <a class="button focus-visible:outline-[3px_solid_#547b2a] focus-visible:outline-offset-4 [display:inline-flex] [min-height:46px] [align-items:center] [justify-content:center] [gap:10px] [border:1px_solid_var(--color-ink)] [border-radius:999px] [background:var(--color-ink)] [color:#fff] [padding:0_20px] [font-family:var(--font-sans)] [font-size:13px] [font-weight:700] [text-decoration:none] [transition:transform_.2s_ease,_background_.2s_ease,_color_.2s_ease] hover:[transform:translateY(-2px)] hover:[background:#2b3832]"
+            href="mailto:mohd.afroj.soft@gmail.com">Email me <span aria-hidden="true">↗</span></a>
+          <a class="button button-light focus-visible:outline-[3px_solid_#547b2a] focus-visible:outline-offset-4 [display:inline-flex] [min-height:46px] [align-items:center] [justify-content:center] [gap:10px] [border:1px_solid_var(--color-ink)] [border-radius:999px] [background:var(--color-ink)] [color:#fff] [padding:0_20px] [font-family:var(--font-sans)] [font-size:13px] [font-weight:700] [text-decoration:none] [transition:transform_.2s_ease,_background_.2s_ease,_color_.2s_ease] hover:[transform:translateY(-2px)] hover:[background:#2b3832] border-line! bg-transparent! text-ink! hover:bg-white!"
+            href="https://www.linkedin.com/in/mohd-afroj-206b4832" target="_blank" rel="noopener noreferrer">LinkedIn
+            <span aria-hidden="true">↗</span></a>
+          <a class="button button-light focus-visible:outline-[3px_solid_#547b2a] focus-visible:outline-offset-4 [display:inline-flex] [min-height:46px] [align-items:center] [justify-content:center] [gap:10px] [border:1px_solid_var(--color-ink)] [border-radius:999px] [background:var(--color-ink)] [color:#fff] [padding:0_20px] [font-family:var(--font-sans)] [font-size:13px] [font-weight:700] [text-decoration:none] [transition:transform_.2s_ease,_background_.2s_ease,_color_.2s_ease] hover:[transform:translateY(-2px)] hover:[background:#2b3832] border-line! bg-transparent! text-ink! hover:bg-white!"
+            href="https://github.com/mohdafroj" target="_blank" rel="noopener noreferrer">GitHub <span
+              aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer wrap">
+  <footer
+    class="footer wrap [display:flex] [min-height:94px] [align-items:center] [justify-content:space-between] [gap:20px] [color:var(--color-muted)] [font-size:11px] [&_p]:[margin-bottom:0] max-[600px]:[min-height:110px] max-[600px]:[align-items:flex-start] max-[600px]:[flex-direction:column] max-[600px]:[justify-content:center] max-[600px]:[gap:12px] [width:min(1120px,_calc(100%_-_48px))] [margin-inline:auto] max-[600px]:[width:min(1120px,_calc(100%_-_36px))]">
     <p>© <span id="year"></span> Mohd Afroj. Made with care.</p>
-    <div class="footer-links">
+    <div
+      class="footer-links [display:flex] [gap:18px] [&_a]:[text-decoration:none] [&_a:hover]:[color:var(--color-ink)]">
       <a href="#home">Back to top ↑</a>
-      <a href="assets/Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+      <a href="assets/Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
     </div>
   </footer>
   <script>

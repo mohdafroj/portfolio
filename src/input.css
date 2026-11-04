@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@source "../index.html";
+@source "../about.html";
+
+@theme {
+  --color-paper: #f7f7f2;
+  --color-ink: #19221f;
+  --color-muted: #646d66;
+  --color-line: #dfe3da;
+  --color-green: #c5f56a;
+  --color-green-dark: #314a1b;
+  --font-sans: "DM Sans", "Segoe UI", sans-serif;
+  --font-display: "Manrope", "Segoe UI", sans-serif;
+}
+
+@keyframes portrait-travel {
+  0%,
+  100% {
+    transform: perspective(900px) rotateY(-4deg) rotateX(2deg) translateY(-4px) scale(1.05) translateX(0) rotateZ(0);
+  }
+
+  35% {
+    transform: perspective(900px) rotateY(-4deg) rotateX(2deg) translateY(-4px) scale(1.05) translateX(-42px) rotateZ(180deg);
+  }
+}
+
+@layer base {
+  a:focus-visible,
+  summary:focus-visible {
+    outline: 3px solid #547b2a;
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
