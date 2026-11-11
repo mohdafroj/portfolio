@@ -4,40 +4,62 @@
 @source "../about.html";
 
 @theme {
+  --breakpoint-sm: 37.5rem;
+  --breakpoint-tablet: 50rem;
+  --breakpoint-wide: 87.5rem;
+  --container-content: 70rem;
   --color-paper: #f7f7f2;
   --color-ink: #19221f;
   --color-muted: #646d66;
   --color-line: #dfe3da;
   --color-green: #c5f56a;
   --color-green-dark: #314a1b;
+  --color-accent: #698a37;
+  --color-accent-strong: #536f2e;
+  --color-accent-muted: #617d3a;
+  --color-surface-soft: #f4f7ed;
+  --color-icon-surface: #edf4df;
+  --color-icon: #507329;
+  --color-text-strong: #344039;
+  --color-border-soft: #e8ece8;
+  --color-border-accent: #d4dfc7;
+  --color-education: #eef0e8;
+  --text-10: 0.625rem;
+  --text-11: 0.6875rem;
+  --text-13: 0.8125rem;
+  --text-15: 0.9375rem;
+  --text-17: 1.0625rem;
+  --text-21: 1.3125rem;
+  --text-22: 1.375rem;
+  --text-25: 1.5625rem;
+  --text-hero: clamp(2.875rem, 6.4vw, 4.875rem);
+  --text-section: clamp(2.125rem, 4.5vw, 3.3125rem);
+  --text-project: clamp(1.75rem, 3.2vw, 2.625rem);
+  --leading-tightest: 1.08;
+  --leading-heading: 1.12;
+  --leading-copy: 1.7;
+  --leading-copy-relaxed: 1.75;
+  --leading-copy-loose: 1.8;
+  --leading-copy-wide: 1.85;
+  --leading-copy-widest: 1.9;
+  --tracking-display: -0.065em;
+  --tracking-display-tight: -0.075em;
+  --tracking-display-soft: -0.055em;
+  --tracking-brand: -0.06em;
+  --tracking-brand-soft: -0.035em;
+  --tracking-label: 0.16em;
+  --tracking-label-wide: 0.14em;
+  --tracking-chip: 0.03em;
+  --spacing-18.75: 4.6875rem;
+  --spacing-hero: 39.6875rem;
+  --spacing-hero-wide: 43.125rem;
+  --shadow-card: 0 14px 30px rgb(25 34 31 / 4%);
+  --shadow-card-hover: 0 14px 32px rgb(25 34 31 / 6%);
+  --shadow-tech-hover: 0 8px 18px rgb(25 34 31 / 6%);
+  --shadow-portrait: 0 24px 45px -18px rgb(25 34 31 / 48%), 16px 18px 30px -22px rgb(25 34 31 / 38%);
+  --shadow-caption: 0 12px 32px rgb(25 34 31 / 9%);
+  --shadow-mobile-menu: 0 14px 35px rgb(25 34 31 / 10%);
+  --perspective-card: 900px;
   --font-sans: "DM Sans", "Segoe UI", sans-serif;
   --font-display: "Manrope", "Segoe UI", sans-serif;
-}
-
-@keyframes portrait-travel {
-  0%,
-  100% {
-    transform: perspective(900px) rotateY(-4deg) rotateX(2deg) translateY(-4px) scale(1.05) translateX(0) rotateZ(0);
-  }
-
-  35% {
-    transform: perspective(900px) rotateY(-4deg) rotateX(2deg) translateY(-4px) scale(1.05) translateX(-42px) rotateZ(180deg);
-  }
-}
-
-@layer base {
-  a:focus-visible,
-  summary:focus-visible {
-    outline: 3px solid #547b2a;
-    outline-offset: 4px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      scroll-behavior: auto !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
 }
